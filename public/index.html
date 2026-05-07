@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        CRM System
+      </div>
+      <nav class="nav">
+        <button class="nav-btn active" data-view="dashboard">Dashboard</button>
+        <button class="nav-btn" data-view="leads">All Leads</button>
+        <button class="nav-btn" data-view="pipeline">Pipeline</button>
+      </nav>
+      <button class="btn btn-primary" id="addLeadBtn">+ Add Lead</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Dashboard View -->
+    <div id="view-dashboard" class="view active">
+      <div class="page-title">
+        <h1>Dashboard</h1>
+        <p class="subtitle">Overview of your leads and pipeline</p>
+      </div>
+
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-card">
+          <div class="stat-value" id="statTotal">—</div>
+          <div class="stat-label">Total Leads</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statNew">—</div>
+          <div class="stat-label">New</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statContacted">—</div>
+          <div class="stat-label">Contacted</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statEmails">—</div>
+          <div class="stat-label">Emails Sent</div>
+        </div>
+      </div>
+
+      <div class="section-title">Status Breakdown</div>
+      <div class="status-bars" id="statusBars"></div>
+
+      <div class="section-title">Recent Leads</div>
+      <div class="table-wrap">
+        <table class="table" id="recentLeadsTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Company</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Added</th>
+              <th>Emails</th>
+            </tr>
+          </thead>
+          <tbody id="recentLeadsBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- All Leads View -->
+    <div id="view-leads" class="view">
+      <div class="page-title-row">
+        <div>
+          <h1>All Leads</h1>
+          <p class="subtitle">Manage and track every lead</p>
+        </div>
+        <div class="toolbar">
+          <input class="search-input" type="text" id="searchInput" placeholder="Search by name, email, company…" />
+          <select class="filter-select" id="statusFilter">
+            <option value="">All statuses</option>
+            <option>New</option>
+            <option>Contacted</option>
+            <option>Proposal Sent</option>
+            <option>Meeting Booked</option>
+            <option>Closed</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table" id="leadsTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Company</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Status</th>
+              <th>Added</th>
+              <th>Emails</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="leadsTableBody"></tbody>
+        </table>
+        <div id="noLeads" class="empty-state" style="display:none">
+          <div class="empty-icon">📋</div>
+          <p>No leads found. Add your first lead to get started!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pipeline View -->
+    <div id="view-pipeline" class="view">
+      <div class="page-title">
+        <h1>Pipeline</h1>
+        <p class="subtitle">Drag leads through your sales pipeline</p>
+      </div>
+      <div class="pipeline" id="pipeline"></div>
+    </div>
+  </main>
+
+  <!-- Add Lead Modal -->
+  <div id="addLeadModal" class="modal-overlay" style="display:none">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Add New Lead</h2>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <form id="addLeadForm">
+        <div class="form-group">
+          <label>Full Name <span class="required">*</span></label>
+          <input type="text" id="leadName" placeholder="Jane Smith" required />
+        </div>
+        <div class="form-group">
+          <label>Email <span class="required">*</span></label>
+          <input type="email" id="leadEmail" placeholder="jane@company.com" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" id="leadPhone" placeholder="+1 555 000 0000" />
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" id="leadCompany" placeholder="Acme Corp" />
+          </div>
+        </div>
+        <div class="email-notice">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          An intro email will be sent automatically. A follow-up will follow in 3 days.
+        </div>
+        <div id="formError" class="form-error" style="display:none"></div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="cancelModal">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submitLead">Add Lead</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lead Detail Modal -->
+  <div id="leadDetailModal" class="modal-overlay" style="display:none">
+    <div class="modal modal-large">
+      <div class="modal-header">
+        <h2 id="detailName">Lead Details</h2>
+        <button class="modal-close" id="closeDetailModal">&times;</button>
+      </div>
+      <div class="detail-body">
+        <div class="detail-info">
+          <div class="detail-field"><span class="detail-label">Email</span><span id="detailEmail">—</span></div>
+          <div class="detail-field"><span class="detail-label">Phone</span><span id="detailPhone">—</span></div>
+          <div class="detail-field"><span class="detail-label">Company</span><span id="detailCompany">—</span></div>
+          <div class="detail-field"><span class="detail-label">Added</span><span id="detailCreated">—</span></div>
+        </div>
+        <div class="detail-status-section">
+          <div class="detail-label">Status</div>
+          <div class="status-stepper" id="statusStepper"></div>
+        </div>
+        <div class="detail-email-section">
+          <div class="detail-label">Email History</div>
+          <div id="emailHistory" class="email-history"></div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-danger" id="deleteLeadBtn">Delete Lead</button>
+        <button class="btn btn-ghost" id="closeDetailBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" style="display:none"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
