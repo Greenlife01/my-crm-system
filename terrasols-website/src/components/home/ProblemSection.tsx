@@ -18,8 +18,8 @@ const stats = [
 
 export default function ProblemSection() {
   return (
-    <SectionWrapper className="bg-soil-black py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <SectionWrapper className="noise-overlay bg-soil-black py-24">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-medium text-text-primary sm:text-4xl">
             India&apos;s Soil Is in Crisis

@@ -14,8 +14,7 @@ export default function ForFarmersSplit() {
     <SectionWrapper className="py-24">
       <div
         style={{
-          background:
-            "linear-gradient(135deg, rgba(61,43,31,0.55), rgba(239,159,39,0.08))",
+          background: "linear-gradient(160deg, #2A1500, #0A1A0C)",
         }}
       >
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-8">
@@ -41,7 +40,7 @@ export default function ForFarmersSplit() {
               ))}
             </ul>
             <div className="mt-8">
-              <Button href="/farmers" variant="secondary">
+              <Button href="/farmers" variant="secondary" className="btn-heartbeat">
                 Are you a farmer? Register your land
               </Button>
             </div>

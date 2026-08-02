@@ -19,9 +19,9 @@ interface ButtonProps {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-growth-green text-soil-black hover:bg-leaf-light hover:shadow-[0_0_40px_rgba(29,158,117,0.4)]",
+    "btn-liquid bg-growth-green text-soil-black hover:text-soil-black hover:shadow-[0_0_40px_rgba(29,158,117,0.4)]",
   secondary:
-    "bg-harvest-amber text-soil-black hover:brightness-110 hover:shadow-[0_0_40px_rgba(239,159,39,0.35)]",
+    "btn-liquid bg-harvest-amber text-soil-black hover:shadow-[0_0_40px_rgba(239,159,39,0.35)]",
   outline:
     "border border-border-subtle text-text-primary hover:border-carbon-teal hover:text-carbon-teal",
   ghost: "text-text-primary hover:text-carbon-teal",

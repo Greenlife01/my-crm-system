@@ -1,9 +1,9 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { MapPin } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Badge from "@/components/ui/Badge";
+import FarmSiteCard from "@/components/home/FarmSiteCard";
 import { farmSites } from "@/lib/farms-data";
 
 const NirmatvaMapClient = dynamic(() => import("./NirmatvaMapClient"), {
@@ -16,16 +16,7 @@ function StaticFallback() {
   return (
     <div className="relative grid h-full w-full grid-cols-2 gap-2 overflow-y-auto p-4 sm:grid-cols-3">
       {farmSites.map((farm) => (
-        <div
-          key={farm.id}
-          className="rounded-xl border border-border-subtle bg-earth-mid/60 p-3 text-xs"
-        >
-          <p className="flex items-center gap-1 font-medium text-carbon-teal">
-            <MapPin className="h-3 w-3" /> {farm.village}
-          </p>
-          <p className="mt-1 text-text-muted">{farm.district}</p>
-          <p className="mt-2 font-data text-text-secondary">{farm.tonnesCO2}t CO₂</p>
-        </div>
+        <FarmSiteCard key={farm.id} farm={farm} />
       ))}
     </div>
   );
@@ -36,8 +27,15 @@ export default function NirmatvaMap() {
   const totalT = farmSites.reduce((sum, f) => sum + f.tonnesCO2, 0);
 
   return (
-    <SectionWrapper className="bg-soil-black py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+      <div
+        className="hue-rotate-slow pointer-events-none absolute inset-0 opacity-40"
+        style={{
+          background:
+            "radial-gradient(50% 60% at 20% 30%, rgba(29,158,117,0.18), transparent 70%), radial-gradient(40% 50% at 80% 70%, rgba(239,159,39,0.1), transparent 70%)",
+        }}
+      />
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-wide text-harvest-amber">
             Project Nirmatva

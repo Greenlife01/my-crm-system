@@ -1,12 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function Counter({
   value,
   suffix = "",
-  duration = 1500,
+  duration = 1.6,
   className,
 }: {
   value: number;
@@ -15,34 +21,33 @@ export default function Counter({
   className?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [display, setDisplay] = useState(0);
 
-  useEffect(() => {
-    if (!isInView) return;
-    let start: number | null = null;
-    let frame: number;
-
-    const step = (timestamp: number) => {
-      if (start === null) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplay(Math.floor(eased * value));
-      if (progress < 1) {
-        frame = requestAnimationFrame(step);
-      } else {
-        setDisplay(value);
-      }
-    };
-
-    frame = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(frame);
-  }, [isInView, value, duration]);
+  useGSAP(
+    () => {
+      if (!ref.current) return;
+      const state = { val: 0 };
+      gsap.to(state, {
+        val: value,
+        duration,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ref.current,
+          start: "top 90%",
+          once: true,
+        },
+        onUpdate: () => {
+          if (ref.current) {
+            ref.current.textContent = `${Math.floor(state.val).toLocaleString("en-IN")}${suffix}`;
+          }
+        },
+      });
+    },
+    { scope: ref, dependencies: [value, suffix, duration] }
+  );
 
   return (
     <span ref={ref} className={className}>
-      {display.toLocaleString("en-IN")}
-      {suffix}
+      0{suffix}
     </span>
   );
 }

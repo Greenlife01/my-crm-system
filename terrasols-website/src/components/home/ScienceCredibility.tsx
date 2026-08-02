@@ -1,5 +1,6 @@
 import { Award } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import Marquee from "@/components/ui/Marquee";
 import { scienceAdvisors } from "@/lib/site-data";
 
 export default function ScienceCredibility() {
@@ -15,15 +16,17 @@ export default function ScienceCredibility() {
           </h2>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {scienceAdvisors.map((name) => (
-            <div
-              key={name}
-              className="flex h-24 items-center justify-center rounded-xl border border-border-subtle bg-earth-dark px-4 text-center text-xs font-medium text-text-secondary transition-colors hover:border-carbon-teal/40"
-            >
-              {name}
-            </div>
-          ))}
+        <div className="mt-14">
+          <Marquee
+            items={scienceAdvisors.map((name) => (
+              <div
+                key={name}
+                className="flex h-24 w-56 items-center justify-center rounded-xl border border-border-subtle bg-earth-dark px-4 text-center text-xs font-medium text-text-secondary transition-colors hover:border-carbon-teal/40"
+              >
+                {name}
+              </div>
+            ))}
+          />
         </div>
 
         <div className="mx-auto mt-14 max-w-3xl rounded-2xl border border-border-subtle bg-earth-dark p-6 text-center">
