@@ -3,6 +3,9 @@ import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import CustomCursor from "@/components/shell/CustomCursor";
+import SmoothScroll from "@/components/shell/SmoothScroll";
+import PageLoader from "@/components/shell/PageLoader";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -75,6 +78,9 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-soil-black text-text-primary">
+        <PageLoader />
+        <SmoothScroll />
+        <CustomCursor />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

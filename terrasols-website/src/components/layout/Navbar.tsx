@@ -43,7 +43,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-carbon-teal",
+                "nav-link-underline rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-carbon-teal",
                 pathname === link.href ? "text-carbon-teal" : "text-text-secondary"
               )}
             >

@@ -5,8 +5,8 @@ import { company, footerLinks, legalLinks, socialLinks } from "@/lib/site-data";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border-subtle bg-earth-dark">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <footer className="noise-overlay noise-overlay--green relative border-t border-border-subtle bg-black">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 font-display text-xl font-semibold text-text-primary">

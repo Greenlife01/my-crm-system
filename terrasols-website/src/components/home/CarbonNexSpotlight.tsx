@@ -1,10 +1,18 @@
+"use client";
+
+import dynamic from "next/dynamic";
 import { Cpu } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Button from "@/components/ui/Button";
 
+const ConstellationField = dynamic(() => import("./ConstellationField"), { ssr: false });
+
 export default function CarbonNexSpotlight() {
   return (
-    <SectionWrapper className="relative overflow-hidden bg-[#0a1420] py-24">
+    <SectionWrapper className="relative overflow-hidden bg-[#020814] py-24">
+      <div className="pointer-events-none absolute inset-0 opacity-70">
+        <ConstellationField />
+      </div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.15),transparent_60%)]" />
       <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
         <span className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wide text-blue-300">
