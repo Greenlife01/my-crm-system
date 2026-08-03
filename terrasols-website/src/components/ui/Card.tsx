@@ -4,11 +4,26 @@ export default function Card({
   children,
   className,
   glass = false,
+  light = false,
 }: {
   children: React.ReactNode;
   className?: string;
   glass?: boolean;
+  light?: boolean;
 }) {
+  if (light) {
+    return (
+      <div
+        className={cn(
+          "card-light rounded-2xl border border-[rgba(29,158,117,0.15)] bg-white p-6 text-muted-forest transition-all duration-300",
+          className
+        )}
+      >
+        {children}
+      </div>
+    );
+  }
+
   return (
     <div
       className={cn(
