@@ -1,7 +1,7 @@
 "use client";
 
-import { Play } from "lucide-react";
 import { useVideoLightbox, VideoLightbox } from "@/components/ui/VideoLightbox";
+import FarmerStoryCard from "@/components/ui/FarmerStoryCard";
 import { farmerStories } from "@/lib/farmer-stories";
 
 export default function FarmerVideoGrid() {
@@ -10,16 +10,7 @@ export default function FarmerVideoGrid() {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {farmerStories.map((story) => (
-        <button
-          key={story.slug}
-          onClick={() => lightbox.open(story.youtubeId)}
-          className="group relative flex aspect-video items-center justify-center overflow-hidden rounded-xl border border-border-subtle bg-earth-dark"
-        >
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-growth-green/90 text-soil-black transition-transform group-hover:scale-110">
-            <Play className="h-5 w-5 fill-current" />
-          </div>
-          <p className="absolute bottom-2 left-2 text-xs font-medium text-text-primary">{story.name}</p>
-        </button>
+        <FarmerStoryCard key={story.slug} story={story} onPlay={() => lightbox.open(story.youtubeId)} />
       ))}
       <VideoLightbox id={lightbox.activeId} onClose={lightbox.close} />
     </div>
