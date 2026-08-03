@@ -33,8 +33,8 @@ function generateVariation(count: number) {
   const speeds = new Float32Array(count);
 
   for (let i = 0; i < count; i++) {
-    sizes[i] = 0.5 + Math.random() * 2.5; // 0.5px – 3px
-    opacities[i] = 0.2 + Math.random() * 0.8; // 0.2 – 1.0
+    sizes[i] = 1.2 + Math.random() * 2.0; // 1.2px – 3.2px (raised floor; was 0.5–3)
+    opacities[i] = 0.45 + Math.random() * 0.55; // 0.45 – 1.0 (raised floor; was 0.2–1.0)
     phases[i * 3] = Math.random() * Math.PI * 2;
     phases[i * 3 + 1] = Math.random() * Math.PI * 2;
     phases[i * 3 + 2] = Math.random() * Math.PI * 2;
@@ -54,9 +54,11 @@ const VERTEX_SHADER = /* glsl */ `
   void main() {
     vOpacity = aOpacity;
     vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-    // aSize is the target on-screen size in px (0.5–3); scaled by camera
+    // aSize is the target on-screen size in px (1.2–3.2); scaled by camera
     // distance so points on the far side of the globe read slightly smaller.
-    gl_PointSize = aSize * (8.5 / -mvPosition.z);
+    // Hard-clamped so no future tuning/camera change can reproduce the old
+    // "220" blow-out bug (solid glowing blob instead of distinct points).
+    gl_PointSize = min(aSize * (28.0 / -mvPosition.z), 14.0);
     gl_Position = projectionMatrix * mvPosition;
   }
 `;

@@ -43,7 +43,7 @@ export default function Hero() {
             "radial-gradient(ellipse at 50% 120%, rgba(29,158,117,0.15) 0%, transparent 60%)",
         }}
       />
-      <div className="absolute inset-0 opacity-80">
+      <div className={`absolute inset-0 ${isMobile ? "opacity-80" : ""}`}>
         {isMobile ? <HeroFallbackGradient /> : <ParticleGlobe />}
       </div>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-[#040D06]/30 to-[#040D06]" />
