@@ -16,9 +16,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <SectionDivider fill="#0f1f10" />
-      <ImpactCounters />
-      <ProblemSection />
+      <SectionDivider fill="#F5F2EC" />
+      <div className="relative">
+        <ImpactCounters />
+        <ProblemSection />
+      </div>
       <SectionDivider fill="#1a2e1c" />
       <SolutionSteps />
       <ForFarmersSplit />
