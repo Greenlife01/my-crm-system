@@ -21,7 +21,7 @@ export default function Home() {
         <ImpactCounters />
         <ProblemSection />
       </div>
-      <SectionDivider fill="#1a2e1c" />
+      <SectionDivider fill="#1a2e1c" animated />
       <SolutionSteps />
       <ForFarmersSplit />
       <SectionDivider fill="#0a1a0c" flip />
