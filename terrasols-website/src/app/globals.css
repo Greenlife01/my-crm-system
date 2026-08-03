@@ -28,6 +28,22 @@
 
   --background: var(--soil-black);
   --foreground: var(--text-primary);
+
+  /* Light-section palette */
+  --cream: #f5f2ec;
+  --parchment-start: #fdf6e3;
+  --parchment-end: #f5ecd7;
+  --amber-brown: #2a1500;
+  --muted-green-grey: #5f7a64;
+  --muted-forest: #3d5247;
+  --blue-white: #f0f6ff;
+  --carbonnex-blue-dark: #0c447c;
+  --carbonnex-blue-btn: #185fa5;
+  --footer-black: #020805;
+
+  /* Light card */
+  --card-light-shadow: 0 4px 24px rgba(10, 26, 12, 0.08);
+  --card-light-shadow-hover: 0 8px 40px rgba(29, 158, 117, 0.15);
 }
 
 @theme inline {
@@ -51,6 +67,17 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-cream: var(--cream);
+  --color-parchment-start: var(--parchment-start);
+  --color-parchment-end: var(--parchment-end);
+  --color-amber-brown: var(--amber-brown);
+  --color-muted-green-grey: var(--muted-green-grey);
+  --color-muted-forest: var(--muted-forest);
+  --color-blue-white: var(--blue-white);
+  --color-carbonnex-blue-dark: var(--carbonnex-blue-dark);
+  --color-carbonnex-blue-btn: var(--carbonnex-blue-btn);
+  --color-footer-black: var(--footer-black);
 
   --font-display: "Clash Display", var(--font-space-grotesk), system-ui, sans-serif;
   --font-sans: var(--font-inter);
@@ -276,6 +303,15 @@ h4,
 }
 .btn-liquid:hover::before {
   clip-path: inset(0 0 0 0);
+}
+
+/* ---------- Light-section card ---------- */
+.card-light {
+  box-shadow: var(--card-light-shadow);
+}
+.card-light:hover {
+  box-shadow: var(--card-light-shadow-hover);
+  transform: translateY(-4px);
 }
 
 /* ---------- Card border trace ---------- */
