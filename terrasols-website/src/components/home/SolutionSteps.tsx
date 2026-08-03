@@ -27,7 +27,7 @@ const steps: Step[] = [
     icon: Mountain,
     title: "Basalt",
     description: "Volcanic basalt rock from the Deccan Traps",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1621908080822-52541d01c4bf?w=1200&q=80",
     overlay: "linear-gradient(135deg, rgba(30,20,10,0.75) 0%, rgba(10,10,10,0.85) 100%)",
     watermark: "01",
     watermarkColor: "rgba(255,255,255,0.06)",
