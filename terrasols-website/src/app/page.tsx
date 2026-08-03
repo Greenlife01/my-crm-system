@@ -16,29 +16,23 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <SectionDivider fill="#F5F2EC" />
+      <SectionDivider fill="#0f1f10" />
       <ImpactCounters />
-      <SectionDivider fill="#0A1A0C" flip />
       <ProblemSection />
-      <SectionDivider fill="#FFFFFF" />
+      <SectionDivider fill="#1a2e1c" />
       <SolutionSteps />
-      <SectionDivider fill="#FDF6E3" />
       <ForFarmersSplit />
-      <SectionDivider fill="#040D06" flip variant="diagonal" />
+      <SectionDivider fill="#0a1a0c" flip />
       <NirmatvaMap />
-      <SectionDivider fill="#F5F2EC" />
       <FarmerStoriesCarousel />
-      <SectionDivider fill="#FFFFFF" />
+      <SectionDivider fill="#0a1a0c" />
       <ScienceCredibility />
-      <SectionDivider fill="#040D06" flip />
       <ForBuyersGrid />
-      <SectionDivider fill="#F0F6FF" variant="diagonal" />
+      <SectionDivider fill="#020814" variant="diagonal" />
       <CarbonNexSpotlight />
-      <SectionDivider fill="#FFFFFF" />
       <InstagramGrid />
-      <SectionDivider fill="#F5F2EC" />
+      <SectionDivider fill="#1a2e1c" />
       <BlogPreview />
-      <SectionDivider fill="#020805" flip />
     </>
   );
 }

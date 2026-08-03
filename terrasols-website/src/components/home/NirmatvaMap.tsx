@@ -27,7 +27,7 @@ export default function NirmatvaMap() {
   const totalT = farmSites.reduce((sum, f) => sum + f.tonnesCO2, 0);
 
   return (
-    <SectionWrapper className="relative overflow-hidden bg-[#040D06] py-24">
+    <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
       <div
         className="hue-rotate-slow pointer-events-none absolute inset-0 opacity-40"
         style={{
@@ -50,20 +50,20 @@ export default function NirmatvaMap() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-4">
-          <div className="order-2 h-[420px] overflow-hidden rounded-2xl border border-[rgba(29,158,117,0.3)] bg-earth-dark lg:order-1 lg:col-span-3">
+          <div className="order-2 h-[420px] overflow-hidden rounded-2xl border border-border-subtle bg-earth-dark lg:order-1 lg:col-span-3">
             {hasMapboxToken ? <NirmatvaMapClient /> : <StaticFallback />}
           </div>
 
           <div className="order-1 flex flex-col gap-4 lg:order-2">
-            <div className="rounded-2xl border border-[rgba(29,158,117,0.3)] bg-earth-dark p-5">
+            <div className="rounded-2xl border border-border-subtle bg-earth-dark p-5">
               <p className="font-data text-3xl font-bold text-carbon-teal">{totalT}t</p>
               <p className="text-xs text-text-muted">CO₂ removed to date</p>
             </div>
-            <div className="rounded-2xl border border-[rgba(29,158,117,0.3)] bg-earth-dark p-5">
+            <div className="rounded-2xl border border-border-subtle bg-earth-dark p-5">
               <p className="font-data text-3xl font-bold text-carbon-teal">{totalHa}</p>
               <p className="text-xs text-text-muted">Hectares covered</p>
             </div>
-            <div className="rounded-2xl border border-[rgba(29,158,117,0.3)] bg-earth-dark p-5">
+            <div className="rounded-2xl border border-border-subtle bg-earth-dark p-5">
               <Badge tone="green">Isometric EW v1.2</Badge>
               <p className="mt-2 text-xs text-text-muted">Verification status: registered &amp; active</p>
             </div>

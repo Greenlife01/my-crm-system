@@ -15,21 +15,25 @@ const steps = [
     icon: Mountain,
     title: "Basalt",
     description: "Volcanic basalt rock from the Deccan Traps",
+    gradient: "linear-gradient(160deg, #4a4d52, #23262b)",
   },
   {
     icon: Tractor,
     title: "Spread",
     description: "We crush & spread it on your farmland",
+    gradient: "linear-gradient(160deg, #5a4130, #2b1e14)",
   },
   {
     icon: FlaskConical,
     title: "React",
     description: "Reacts with soil water & CO₂",
+    gradient: "linear-gradient(160deg, #12665a, #0a2b26)",
   },
   {
     icon: Leaf,
     title: "Capture",
     description: "CO₂ locked away permanently",
+    gradient: "linear-gradient(160deg, #12401f, #06170c)",
   },
 ];
 
@@ -69,15 +73,15 @@ export default function SolutionSteps() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-white"
+      className="relative bg-earth-mid"
       style={{ height: `${steps.length * 100}vh` }}
     >
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="pointer-events-none absolute top-10 left-0 right-0 z-20 text-center">
-          <h2 className="font-display text-3xl font-medium text-soil-black sm:text-4xl">
+          <h2 className="font-display text-3xl font-medium text-text-primary sm:text-4xl">
             Our Solution
           </h2>
-          <p className="mt-3 text-muted-forest">From rock to permanent carbon removal.</p>
+          <p className="mt-3 text-text-muted">From rock to permanent carbon removal.</p>
         </div>
 
         {steps.map((step, i) => (
@@ -86,20 +90,20 @@ export default function SolutionSteps() {
             ref={(el) => {
               cardRefs.current[i] = el;
             }}
-            className="absolute inset-0 flex items-center justify-center border-l-4 border-[#1D9E75] bg-cream px-6"
-            style={{ zIndex: i }}
+            className="absolute inset-0 flex items-center justify-center px-6"
+            style={{ zIndex: i, background: step.gradient }}
           >
             <div className="mx-auto flex max-w-lg flex-col items-center text-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#1D9E75]/10 text-[#1D9E75]">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 text-carbon-teal backdrop-blur-sm">
                 <step.icon className="h-10 w-10" />
               </div>
-              <p className="mt-6 font-display text-sm font-semibold uppercase tracking-widest text-[#1D9E75]">
+              <p className="mt-6 font-display text-sm font-semibold uppercase tracking-widest text-carbon-teal">
                 Step {i + 1}
               </p>
-              <p className="mt-2 font-display text-4xl font-medium text-soil-black sm:text-5xl">
+              <p className="mt-2 font-display text-4xl font-medium text-white sm:text-5xl">
                 {step.title}
               </p>
-              <p className="mt-4 text-lg text-muted-forest">{step.description}</p>
+              <p className="mt-4 text-lg text-white/70">{step.description}</p>
             </div>
           </div>
         ))}

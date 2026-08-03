@@ -19,25 +19,19 @@ function generateDots(count: number) {
 // Generated once at module load — not during render.
 const DOT_POSITIONS = generateDots(COUNT);
 
-export default function ConstellationField({
-  color = "#5b9dfa",
-  opacity = 0.7,
-}: {
-  color?: string;
-  opacity?: number;
-}) {
+export default function ConstellationField() {
   return (
     <Canvas
       camera={{ position: [0, 0, 6], fov: 50 }}
       gl={{ antialias: true, alpha: true }}
       dpr={[1, 1.5]}
     >
-      <Dots color={color} opacity={opacity} />
+      <Dots />
     </Canvas>
   );
 }
 
-function Dots({ color, opacity }: { color: string; opacity: number }) {
+function Dots() {
   const pointsRef = useRef<THREE.Points>(null);
   const positions = DOT_POSITIONS;
 
@@ -54,9 +48,9 @@ function Dots({ color, opacity }: { color: string; opacity: number }) {
       </bufferGeometry>
       <pointsMaterial
         size={0.045}
-        color={color}
+        color="#5b9dfa"
         transparent
-        opacity={opacity}
+        opacity={0.7}
         sizeAttenuation
         depthWrite={false}
       />
