@@ -15,6 +15,7 @@ interface ButtonProps {
   target?: string;
   rel?: string;
   disabled?: boolean;
+  shimmer?: boolean;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -38,10 +39,12 @@ export default function Button({
   target,
   rel,
   disabled,
+  shimmer = false,
 }: ButtonProps) {
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-medium transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none",
     variantStyles[variant],
+    shimmer && "btn-shimmer",
     className
   );
 

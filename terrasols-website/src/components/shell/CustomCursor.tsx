@@ -30,10 +30,20 @@ export default function CustomCursor() {
 
     window.addEventListener("pointermove", onMove);
 
+    // Elastic lag: exponential decay toward the pointer with a ~0.1s time
+    // constant, computed from real frame delta so the trailing feel stays
+    // consistent regardless of refresh rate (unlike a fixed per-frame factor).
+    const LAG_TIME_CONSTANT = 0.1;
     let raf: number;
-    const tick = () => {
-      ring.current.x += (target.current.x - ring.current.x) * 0.18;
-      ring.current.y += (target.current.y - ring.current.y) * 0.18;
+    let lastTime: number | null = null;
+
+    const tick = (now: number) => {
+      const dt = lastTime === null ? 1 / 60 : Math.min((now - lastTime) / 1000, 0.1);
+      lastTime = now;
+      const factor = 1 - Math.exp(-dt / LAG_TIME_CONSTANT);
+
+      ring.current.x += (target.current.x - ring.current.x) * factor;
+      ring.current.y += (target.current.y - ring.current.y) * factor;
       if (ringRef.current) {
         const scale = hovering.current ? 1.5 : 1;
         ringRef.current.style.transform = `translate3d(${ring.current.x}px, ${ring.current.y}px, 0) translate(-50%, -50%) scale(${scale})`;
