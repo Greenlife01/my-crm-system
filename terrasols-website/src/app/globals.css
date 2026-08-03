@@ -381,6 +381,20 @@ h4,
   text-shadow: 0 0 80px rgba(29, 158, 117, 0.3);
 }
 
+/* ---------- Benefit / roster mini-cards ---------- */
+.benefit-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: all 0.3s ease;
+}
+.benefit-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(239, 159, 39, 0.4);
+  transform: translateX(4px);
+}
+
 /* ---------- Slow hue rotate background ---------- */
 .hue-rotate-slow {
   animation: var(--animate-hue) alternate;

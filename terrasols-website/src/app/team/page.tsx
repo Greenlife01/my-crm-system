@@ -58,10 +58,11 @@ export default function TeamPage() {
           </h2>
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {advisoryBoard.map((advisor) => (
-              <div key={advisor.name} className="rounded-2xl border border-border-subtle bg-earth-mid p-5 text-center">
-                <p className="font-display font-semibold text-text-primary">{advisor.name}</p>
+              <Card key={advisor.name} className="text-center">
+                <Avatar name={advisor.name} size={56} />
+                <p className="mt-4 font-display font-semibold text-text-primary">{advisor.name}</p>
                 <p className="mt-1 text-xs text-text-muted">{advisor.org}</p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
@@ -72,11 +73,14 @@ export default function TeamPage() {
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             Field &amp; Lab Team
           </h2>
-          <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {fieldTeam.map((member) => (
-              <div key={member.name} className="rounded-xl border border-border-subtle bg-earth-dark p-4 text-center">
-                <p className="text-sm font-medium text-text-primary">{member.name}</p>
-                <p className="mt-1 text-xs text-text-muted">{member.role}</p>
+              <div key={member.name} className="benefit-card flex items-center gap-3.5">
+                <Avatar name={member.name} size={40} />
+                <div>
+                  <p className="text-sm font-medium text-text-primary">{member.name}</p>
+                  <p className="mt-0.5 text-xs text-text-muted">{member.role}</p>
+                </div>
               </div>
             ))}
           </div>
