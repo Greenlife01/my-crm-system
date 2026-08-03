@@ -40,7 +40,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(60% 50% at 50% 100%, rgba(29,158,117,0.28), transparent 70%)",
+            "radial-gradient(ellipse at 50% 120%, rgba(29,158,117,0.15) 0%, transparent 60%)",
         }}
       />
       <div className="absolute inset-0 opacity-80">
@@ -60,14 +60,27 @@ export default function Hero() {
 
         <h1
           ref={headlineRef}
-          className="hero-headline font-display text-[56px] font-medium text-white sm:text-7xl lg:text-[96px]"
-          style={{ letterSpacing: "-0.03em", lineHeight: 0.95 }}
+          className="hero-headline font-display text-[56px] font-medium text-white sm:text-7xl lg:text-[104px]"
+          style={{ letterSpacing: "-0.04em", lineHeight: 0.95 }}
         >
-          {words.map((word, i) => (
-            <span key={i} className="hero-word mr-3 inline-block last:mr-0">
-              {word}
-            </span>
-          ))}
+          {words.map((word, i) => {
+            const isLast = i === words.length - 1;
+            if (isLast) {
+              const base = word.slice(0, -1);
+              const punctuation = word.slice(-1);
+              return (
+                <span key={i} className="hero-word inline-block">
+                  {base}
+                  <span style={{ color: "#1D9E75" }}>{punctuation}</span>
+                </span>
+              );
+            }
+            return (
+              <span key={i} className="hero-word mr-3 inline-block">
+                {word}
+              </span>
+            );
+          })}
         </h1>
 
         <motion.p
@@ -86,7 +99,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 1.05 }}
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          <Button href="/science" variant="primary">
+          <Button href="/science" variant="primary" shimmer>
             Learn How It Works
           </Button>
           <Button href="/buyers" variant="outline">
