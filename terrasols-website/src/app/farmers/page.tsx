@@ -7,6 +7,8 @@ import Accordion from "@/components/ui/Accordion";
 import FarmerVideoGrid from "@/components/farmers/FarmerVideoGrid";
 import FarmerRegisterForm from "@/components/forms/FarmerRegisterForm";
 
+const benefitAccents = ["#EF9F27", "#1D9E75", "#EF9F27", "#1D9E75"];
+
 export const metadata: Metadata = {
   title: "For Farmers",
   description:
@@ -62,6 +64,8 @@ export default function FarmersPage() {
         title="आपकी ज़मीन, आपकी कमाई"
         description="Your land, your earnings — zero-cost basalt, soil health, and carbon income for Indian smallholder farmers."
         tone="amber"
+        image="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1600&q=80"
+        overlay="linear-gradient(135deg, rgba(42,21,0,0.88) 0%, rgba(20,35,10,0.82) 100%)"
       />
 
       <SectionWrapper className="bg-soil-black py-24">
@@ -84,10 +88,23 @@ export default function FarmersPage() {
       <SectionWrapper className="bg-earth-dark py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">Benefits</h2>
-          <div className="mt-14 grid grid-cols-2 gap-6 lg:grid-cols-4">
-            {benefits.map((b) => (
-              <div key={b.stat} className="text-center">
-                <p className="font-data text-2xl font-bold text-carbon-teal sm:text-3xl">{b.stat}</p>
+          <div className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {benefits.map((b, i) => (
+              <div
+                key={b.stat}
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  borderLeft: `4px solid ${benefitAccents[i]}`,
+                  borderRadius: 16,
+                  padding: "24px 20px",
+                }}
+              >
+                <p
+                  className="font-display text-xl font-bold sm:text-2xl"
+                  style={{ color: benefitAccents[i] }}
+                >
+                  {b.stat}
+                </p>
                 <p className="mt-2 text-xs text-text-muted sm:text-sm">{b.detail}</p>
               </div>
             ))}
@@ -99,17 +116,21 @@ export default function FarmersPage() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">How to Join</h2>
           <div className="relative mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="absolute top-10 left-0 right-0 hidden h-px bg-gradient-to-r from-transparent via-harvest-amber/50 to-transparent lg:block" />
+            <div className="absolute top-11 left-0 right-0 hidden h-px bg-gradient-to-r from-transparent via-harvest-amber/50 to-transparent lg:block" />
             {steps.map((s, i) => (
-              <div key={s.title} className="relative rounded-2xl border border-border-subtle bg-earth-dark p-6 text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-harvest-amber/15 text-harvest-amber">
-                  <s.icon className="h-6 w-6" />
+              <Card key={s.title} className="relative text-center">
+                <span
+                  className="absolute -top-3 left-1/2 flex h-7 w-7 -translate-x-1/2 items-center justify-center rounded-full font-data text-xs font-bold"
+                  style={{ background: "#EF9F27", color: "#0A1A0C" }}
+                >
+                  {i + 1}
+                </span>
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-harvest-amber/15 text-harvest-amber">
+                  <s.icon className="h-7 w-7" />
                 </div>
-                <p className="mt-4 font-display font-semibold text-text-primary">
-                  {i + 1}. {s.title}
-                </p>
+                <p className="mt-4 font-display font-semibold text-text-primary">{s.title}</p>
                 <p className="mt-2 text-sm text-text-muted">{s.body}</p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
