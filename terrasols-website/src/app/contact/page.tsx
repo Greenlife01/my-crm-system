@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { InstagramIcon, LinkedinIcon, YoutubeIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 import PageHero from "@/components/ui/PageHero";
 import SectionWrapper from "@/components/ui/SectionWrapper";
@@ -38,10 +38,10 @@ export default function ContactPage() {
                   className="flex shrink-0 items-center justify-center rounded-full"
                   style={{ width: 36, height: 36, background: "rgba(93,202,165,0.15)", border: "1px solid rgba(93,202,165,0.3)" }}
                 >
-                  <Mail className="h-4 w-4 text-carbon-teal" />
+                  <Phone className="h-4 w-4 text-carbon-teal" />
                 </span>
-                <a href={`mailto:${company.emailPrimary}`} className="text-text-secondary">
-                  {company.emailPrimary}
+                <a href={`tel:${company.phone}`} className="text-text-secondary">
+                  {company.phone}
                 </a>
               </li>
               <li className="benefit-card flex items-center gap-3.5">

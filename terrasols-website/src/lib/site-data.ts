@@ -4,7 +4,7 @@ export const company = {
   cin: "U62099UP2024PTC205629",
   dpiit: "DIPP173992",
   website: "www.terrasols.earth",
-  emailPrimary: "manish@terrasols.earth",
+  phone: "+91-8789374657",
   emailInfo: "info@terrasols.earth",
   location: "Greater Noida, Uttar Pradesh, India",
   spv: {
@@ -79,7 +79,7 @@ export const founders = [
   {
     name: "Manish Kumar",
     role: "Co-Founder & CEO",
-    email: "manish@terrasols.earth",
+    email: null,
     bio: "Manish leads Terrasols' strategy, carbon market partnerships, and commercial growth — driving the company's mission to make enhanced rock weathering a scalable, farmer-first climate solution across India.",
   },
   {
