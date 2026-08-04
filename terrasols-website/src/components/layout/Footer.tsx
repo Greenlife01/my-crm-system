@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Sprout, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { InstagramIcon, LinkedinIcon, YoutubeIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 import { company, footerLinks, legalLinks, socialLinks } from "@/lib/site-data";
 
@@ -10,9 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 font-display text-xl font-semibold text-text-primary">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-growth-green/15 text-growth-green">
-                <Sprout className="h-5 w-5" />
-              </span>
+              <Image src="/logo-mark.png" alt="" width={36} height={36} className="h-9 w-9" />
               Terrasols
             </Link>
             <p className="mt-4 max-w-sm text-sm text-text-muted">

@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Sprout, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { navLinks } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
@@ -31,9 +32,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold text-text-primary">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-growth-green/15 text-growth-green">
-            <Sprout className="h-5 w-5" />
-          </span>
+          <Image src="/logo-mark.png" alt="" width={32} height={32} className="h-8 w-8" priority />
           Terrasols
         </Link>
 
