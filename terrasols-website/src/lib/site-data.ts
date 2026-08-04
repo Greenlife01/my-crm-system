@@ -115,23 +115,9 @@ export const timeline = [
   },
   {
     date: "Early 2025",
-    title: "Isometric EW v1.2 Registration",
-    detail: "Project Nirmatva registered under the Isometric Enhanced Weathering Protocol v1.2.",
-  },
-  {
-    date: "March 2025",
-    title: "G2G Transaction Signed",
-    detail: "Nirmatva Carbon SPV formed; government-to-government transaction signed.",
-  },
-  {
-    date: "May 2025",
-    title: "First Commercial Revenue",
-    detail: "Terrasols reaches its first commercial revenue milestone.",
-  },
-  {
-    date: "July 2025",
-    title: "Pre-Seed SAFE Round Open",
-    detail: "Terrasols opens a pre-seed SAFE round to accelerate deployment.",
+    title: "Isometric EW Protocol — Pilot Selection",
+    detail:
+      "Project Nirmatva selected to pilot Enhanced Rock Weathering under the Isometric EW Protocol — one of the most rigorous carbon removal verification standards globally.",
   },
 ];
 
