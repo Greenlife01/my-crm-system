@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sprout } from "lucide-react";
 
 const FLAG = "terrasols-loaded";
 
@@ -55,9 +55,7 @@ export default function PageLoader() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="flex items-center gap-2 font-display text-2xl font-semibold text-text-primary"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-growth-green/15 text-growth-green">
-                <Sprout className="h-6 w-6" />
-              </span>
+              <Image src="/logo-mark.png" alt="" width={40} height={40} className="h-10 w-10" priority />
               Terrasols
             </motion.div>
             <motion.div
