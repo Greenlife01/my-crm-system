@@ -400,6 +400,15 @@ h4,
   animation: var(--animate-hue) alternate;
 }
 
+/* ---------- Section divider wave draw-in ---------- */
+.divider-draw {
+  clip-path: inset(0 100% 0 0);
+}
+.divider-draw--in {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1.1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
 /* ---------- Stats section top draw-in line ---------- */
 .stats-top-line {
   position: absolute;
