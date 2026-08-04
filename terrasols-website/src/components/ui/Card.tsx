@@ -4,10 +4,12 @@ export default function Card({
   children,
   className,
   glass = false,
+  style,
 }: {
   children: React.ReactNode;
   className?: string;
   glass?: boolean;
+  style?: React.CSSProperties;
 }) {
   return (
     <div
@@ -16,6 +18,7 @@ export default function Card({
         glass ? "glass-card" : "bg-earth-dark",
         className
       )}
+      style={style}
     >
       {children}
     </div>

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { UserRound, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { LinkedinIcon } from "@/components/ui/SocialIcons";
 import PageHero from "@/components/ui/PageHero";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Card from "@/components/ui/Card";
-import { founders, advisoryBoard, fieldTeam } from "@/lib/site-data";
+import Avatar from "@/components/ui/Avatar";
+import { founders, advisoryBoard, fieldTeam, socialLinks } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Team",
@@ -22,9 +23,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {founders.map((founder) => (
               <Card key={founder.name} className="text-center">
-                <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-growth-green/15 text-growth-green">
-                  <UserRound className="h-12 w-12" />
-                </div>
+                <Avatar name={founder.name} size={96} />
                 <p className="mt-5 font-display text-xl font-semibold text-text-primary">{founder.name}</p>
                 <p className="text-sm font-medium text-carbon-teal">{founder.role}</p>
                 <p className="mt-4 text-sm leading-relaxed text-text-muted">{founder.bio}</p>
@@ -37,9 +36,14 @@ export default function TeamPage() {
                       <Mail className="h-4 w-4" />
                     </a>
                   )}
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-border-subtle text-text-secondary hover:border-carbon-teal hover:text-carbon-teal">
+                  <a
+                    href={socialLinks.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-border-subtle text-text-secondary hover:border-carbon-teal hover:text-carbon-teal"
+                  >
                     <LinkedinIcon className="h-4 w-4" />
-                  </span>
+                  </a>
                 </div>
               </Card>
             ))}
@@ -54,10 +58,11 @@ export default function TeamPage() {
           </h2>
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {advisoryBoard.map((advisor) => (
-              <div key={advisor.name} className="rounded-2xl border border-border-subtle bg-earth-mid p-5 text-center">
-                <p className="font-display font-semibold text-text-primary">{advisor.name}</p>
+              <Card key={advisor.name} className="text-center">
+                <Avatar name={advisor.name} size={56} />
+                <p className="mt-4 font-display font-semibold text-text-primary">{advisor.name}</p>
                 <p className="mt-1 text-xs text-text-muted">{advisor.org}</p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
@@ -68,11 +73,14 @@ export default function TeamPage() {
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             Field &amp; Lab Team
           </h2>
-          <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {fieldTeam.map((member) => (
-              <div key={member.name} className="rounded-xl border border-border-subtle bg-earth-dark p-4 text-center">
-                <p className="text-sm font-medium text-text-primary">{member.name}</p>
-                <p className="mt-1 text-xs text-text-muted">{member.role}</p>
+              <div key={member.name} className="benefit-card flex items-center gap-3.5">
+                <Avatar name={member.name} size={40} />
+                <div>
+                  <p className="text-sm font-medium text-text-primary">{member.name}</p>
+                  <p className="mt-0.5 text-xs text-text-muted">{member.role}</p>
+                </div>
               </div>
             ))}
           </div>

@@ -3,6 +3,7 @@ import { Award, FlaskConical, Database, Mountain } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Card from "@/components/ui/Card";
+import ImageOverlayCard from "@/components/ui/ImageOverlayCard";
 
 export const metadata: Metadata = {
   title: "Science",
@@ -106,9 +107,20 @@ export default function SciencePage() {
                 <li>• Proximity to smallholder farmland in Madhya Pradesh</li>
               </ul>
             </div>
-            <div className="flex aspect-square items-center justify-center rounded-2xl border border-border-subtle bg-earth-mid text-sm text-text-muted">
-              Map: Deccan Traps geological formation
-            </div>
+            <ImageOverlayCard
+              image="https://images.unsplash.com/photo-1621908080822-52541d01c4bf?w=1200&q=80"
+              overlay="linear-gradient(135deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.75) 100%)"
+              watermark="MP"
+              watermarkColor="rgba(239,159,39,0.1)"
+              className="aspect-square"
+              style={{ borderRadius: 16, border: "1px solid rgba(239,159,39,0.3)" }}
+            >
+              <div className="flex h-full items-end p-5">
+                <p className="text-xs font-medium uppercase tracking-wide text-white/90">
+                  Deccan Traps basalt &middot; Madhya Pradesh
+                </p>
+              </div>
+            </ImageOverlayCard>
           </div>
         </div>
       </SectionWrapper>
@@ -125,7 +137,12 @@ export default function SciencePage() {
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
             {mrvPoints.map((p) => (
               <Card key={p.title}>
-                <p.icon className="h-6 w-6 text-carbon-teal" />
+                <span
+                  className="flex h-12 w-12 items-center justify-center rounded-full"
+                  style={{ background: "rgba(93,202,165,0.15)", border: "1px solid rgba(93,202,165,0.3)" }}
+                >
+                  <p.icon className="h-5 w-5 text-carbon-teal" />
+                </span>
                 <p className="mt-4 font-display font-semibold text-text-primary">{p.title}</p>
                 <p className="mt-2 text-sm text-text-muted">{p.body}</p>
               </Card>
