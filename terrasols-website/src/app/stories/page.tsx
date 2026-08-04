@@ -11,7 +11,12 @@ export const metadata: Metadata = {
 export default function StoriesPage() {
   return (
     <>
-      <PageHero eyebrow="Farmer Stories" title="Real Voices From the Field" tone="amber" />
+      <PageHero
+        eyebrow="Farmer Stories"
+        title="Real Voices From the Field"
+        tone="amber"
+        image="https://images.unsplash.com/photo-1620200423727-8127f75d7f53?w=1600&q=80"
+      />
       <SectionWrapper className="bg-soil-black py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <StoriesGrid />

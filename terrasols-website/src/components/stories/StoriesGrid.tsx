@@ -2,9 +2,9 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Play } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { farmerStories } from "@/lib/farmer-stories";
+import FarmerStoryCard from "@/components/ui/FarmerStoryCard";
 
 export default function StoriesGrid() {
   const states = useMemo(() => ["all", ...new Set(farmerStories.map((s) => s.state))], []);
@@ -57,23 +57,11 @@ export default function StoriesGrid() {
 
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((story) => (
-          <Link
-            key={story.slug}
-            href={`/stories/${story.slug}`}
-            className="group overflow-hidden rounded-2xl border border-border-subtle bg-earth-dark transition-colors hover:border-carbon-teal/40"
-          >
-            <div className="relative flex aspect-video items-center justify-center bg-earth-mid">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-growth-green/90 text-soil-black transition-transform group-hover:scale-110">
-                <Play className="h-5 w-5 fill-current" />
-              </div>
-            </div>
-            <div className="p-5">
-              <p className="font-display font-semibold text-text-primary">{story.name}</p>
-              <p className="mt-1 text-xs text-text-muted">
-                {story.village}, {story.district} &middot; {story.cropType}
-              </p>
-              <p className="mt-3 font-data text-sm text-carbon-teal">{story.yieldChange}</p>
-            </div>
+          <Link key={story.slug} href={`/stories/${story.slug}`} className="group block">
+            <FarmerStoryCard
+              story={story}
+              className="transition-colors group-hover:border-carbon-teal/40"
+            />
           </Link>
         ))}
       </div>
