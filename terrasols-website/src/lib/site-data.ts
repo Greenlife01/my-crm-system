@@ -97,11 +97,11 @@ export const founders = [
 export const advisoryBoard = [
   { name: "Dr. Bhupinder Singh", org: "ICAR-IARI Pusa" },
   { name: "Dr. Chandan Kumar Gupta", org: "ICAR-IARI Pusa" },
-  { name: "Dr. Deepti Singh", org: "JNU SOES — Science Programme Lead" },
   { name: "Advisors", org: "IISS | ISM Dhanbad | RRCAT" },
 ];
 
 export const fieldTeam = [
+  { name: "Dr. Deepti Singh", role: "JNU SOES — Science Programme Lead", photo: null, bio: null },
   { name: "Arpit Pandey", role: "Field Operations Head", photo: null, bio: null },
   { name: "Madan Singh", role: "Lab Team, IARI-PUSA", photo: null, bio: null },
   { name: "Pavan Kumar", role: "Lab Team, IARI-PUSA", photo: null, bio: null },
