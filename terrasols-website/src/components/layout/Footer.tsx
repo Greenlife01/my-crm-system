@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { InstagramIcon, LinkedinIcon, YoutubeIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 import { company, footerLinks, legalLinks, socialLinks } from "@/lib/site-data";
 
@@ -59,15 +59,16 @@ export default function Footer() {
             </h4>
             <ul className="mt-4 space-y-3 text-sm text-text-muted">
               <li className="flex items-start gap-2">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-carbon-teal" />
+                <a href={`tel:${company.phone}`} className="hover:text-carbon-teal">
+                  {company.phone}
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-carbon-teal" />
-                <span className="flex flex-col">
-                  <a href={`mailto:${company.emailPrimary}`} className="hover:text-carbon-teal">
-                    {company.emailPrimary}
-                  </a>
-                  <a href={`mailto:${company.emailInfo}`} className="hover:text-carbon-teal">
-                    {company.emailInfo}
-                  </a>
-                </span>
+                <a href={`mailto:${company.emailInfo}`} className="hover:text-carbon-teal">
+                  {company.emailInfo}
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-carbon-teal" />

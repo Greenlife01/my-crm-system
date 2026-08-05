@@ -5,12 +5,13 @@ import PageHero from "@/components/ui/PageHero";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Card from "@/components/ui/Card";
 import Avatar from "@/components/ui/Avatar";
+import Marquee from "@/components/ui/Marquee";
 import { founders, advisoryBoard, fieldTeam, socialLinks } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Team",
   description:
-    "Meet the Co-Founders, science advisory board, and field & lab team behind Terrasols and Project Nirmatva.",
+    "Meet the Co-Founders, the Terrasols team, and the science advisory board behind Terrasols and Project Nirmatva.",
 };
 
 export default function TeamPage() {
@@ -23,7 +24,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {founders.map((founder) => (
               <Card key={founder.name} className="text-center">
-                <Avatar name={founder.name} size={96} />
+                <Avatar name={founder.name} photo={founder.photo} size={96} />
                 <p className="mt-5 font-display text-xl font-semibold text-text-primary">{founder.name}</p>
                 <p className="text-sm font-medium text-carbon-teal">{founder.role}</p>
                 <p className="mt-4 text-sm leading-relaxed text-text-muted">{founder.bio}</p>
@@ -37,7 +38,7 @@ export default function TeamPage() {
                     </a>
                   )}
                   <a
-                    href={socialLinks.linkedin}
+                    href={founder.linkedin ?? socialLinks.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex h-9 w-9 items-center justify-center rounded-full border border-border-subtle text-text-secondary hover:border-carbon-teal hover:text-carbon-teal"
@@ -48,6 +49,26 @@ export default function TeamPage() {
               </Card>
             ))}
           </div>
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper className="bg-white py-24">
+        <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
+          <h2 className="font-display text-3xl font-medium text-soil-black sm:text-4xl">Terrasols Team</h2>
+        </div>
+
+        <div className="mt-14">
+          <Marquee
+            speed={22}
+            items={fieldTeam.map((member) => (
+              <Card key={member.name} className="!border-black/10 !bg-white w-72 text-center sm:w-80">
+                <Avatar name={member.name} photo={member.photo} size={112} />
+                <p className="mt-5 font-display text-lg font-semibold text-soil-black">{member.name}</p>
+                <p className="mt-1 text-sm font-medium text-carbon-teal">{member.role}</p>
+                {member.bio && <p className="mt-3 text-sm leading-relaxed text-text-muted">{member.bio}</p>}
+              </Card>
+            ))}
+          />
         </div>
       </SectionWrapper>
 
@@ -63,25 +84,6 @@ export default function TeamPage() {
                 <p className="mt-4 font-display font-semibold text-text-primary">{advisor.name}</p>
                 <p className="mt-1 text-xs text-text-muted">{advisor.org}</p>
               </Card>
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
-
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">
-            Field &amp; Lab Team
-          </h2>
-          <div className="mt-14 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {fieldTeam.map((member) => (
-              <div key={member.name} className="benefit-card flex items-center gap-3.5">
-                <Avatar name={member.name} size={40} />
-                <div>
-                  <p className="text-sm font-medium text-text-primary">{member.name}</p>
-                  <p className="mt-0.5 text-xs text-text-muted">{member.role}</p>
-                </div>
-              </div>
             ))}
           </div>
         </div>

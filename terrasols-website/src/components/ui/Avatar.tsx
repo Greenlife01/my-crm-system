@@ -14,11 +14,25 @@ export default function Avatar({
   name,
   size = 96,
   className,
+  photo,
 }: {
   name: string;
   size?: number;
   className?: string;
+  photo?: string | null;
 }) {
+  if (photo) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={photo}
+        alt={name}
+        className={cn("mx-auto shrink-0 rounded-full object-cover", className)}
+        style={{ width: size, height: size }}
+      />
+    );
+  }
+
   const initials = name
     .split(" ")
     .map((part) => part[0])

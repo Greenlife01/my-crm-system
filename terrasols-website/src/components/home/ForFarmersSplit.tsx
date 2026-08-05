@@ -1,6 +1,11 @@
+"use client";
+
 import { CheckCircle2, Play, Wheat } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Button from "@/components/ui/Button";
+import { useVideoLightbox, VideoLightbox } from "@/components/ui/VideoLightbox";
+
+const FARMER_STORY_YOUTUBE_ID = "zSPKvhu4lBc";
 
 const benefits = [
   "Zero cost — basalt, spreading, lab testing all free",
@@ -10,6 +15,8 @@ const benefits = [
 ];
 
 export default function ForFarmersSplit() {
+  const lightbox = useVideoLightbox();
+
   return (
     <SectionWrapper className="py-24">
       <div className="relative overflow-hidden">
@@ -48,8 +55,10 @@ export default function ForFarmersSplit() {
         </div>
 
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-8">
-          <div
-            className="relative aspect-video overflow-hidden"
+          <button
+            type="button"
+            onClick={() => lightbox.open(FARMER_STORY_YOUTUBE_ID)}
+            className="relative aspect-video overflow-hidden text-left"
             style={{
               border: "1px solid rgba(239,159,39,0.4)",
               borderRadius: 16,
@@ -57,7 +66,7 @@ export default function ForFarmersSplit() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80"
+              src={`https://img.youtube.com/vi/${FARMER_STORY_YOUTUBE_ID}/maxresdefault.jpg`}
               alt=""
               style={{
                 position: "absolute",
@@ -102,7 +111,7 @@ export default function ForFarmersSplit() {
                 ▶ Watch Farmer Story
               </span>
             </div>
-          </div>
+          </button>
 
           <div>
             <span
@@ -181,6 +190,7 @@ export default function ForFarmersSplit() {
           </div>
         </div>
       </div>
+      <VideoLightbox id={lightbox.activeId} onClose={lightbox.close} />
     </SectionWrapper>
   );
 }

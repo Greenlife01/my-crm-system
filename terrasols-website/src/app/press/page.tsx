@@ -99,8 +99,8 @@ export default function PressPage() {
           </div>
           <p className="mt-6 text-sm text-text-muted">
             Press contact:{" "}
-            <a href={`mailto:${company.emailPrimary}`} className="text-carbon-teal">
-              {company.emailPrimary}
+            <a href={`tel:${company.phone}`} className="text-carbon-teal">
+              {company.phone}
             </a>
           </p>
         </div>
