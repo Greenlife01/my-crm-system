@@ -2,13 +2,10 @@ import { LinkedinIcon } from "@/components/ui/SocialIcons";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import { socialLinks } from "@/lib/site-data";
 
-const placeholderPosts = [
-  "Basalt delivery day in Khandwa",
-  "Field team soil sampling, Nimar belt",
-  "Farmer partner spotlight: Punasa village",
-  "Before/after: soil pH improvement",
-  "Behind the scenes at Project Nirmatva",
-  "Meet the lab team at IARI-PUSA",
+const linkedinPostIds = [
+  "7358882328712011777",
+  "7380946218132271105",
+  "7426544362802532352",
 ];
 
 export default function InstagramGrid() {
@@ -29,22 +26,22 @@ export default function InstagramGrid() {
           </a>
         </div>
 
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {placeholderPosts.map((caption, i) => (
-            <a
-              key={i}
-              href={socialLinks.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative aspect-square overflow-hidden rounded-xl border border-border-subtle bg-earth-dark"
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {linkedinPostIds.map((id) => (
+            <div
+              key={id}
+              className="overflow-hidden rounded-xl border border-border-subtle bg-earth-dark"
             >
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-growth-green/10 to-earth-mid text-text-muted">
-                <LinkedinIcon className="h-6 w-6 opacity-40" />
-              </div>
-              <div className="absolute inset-0 flex items-end bg-black/60 p-3 opacity-0 transition-opacity group-hover:opacity-100">
-                <p className="text-xs text-text-primary">{caption}</p>
-              </div>
-            </a>
+              <iframe
+                src={`https://www.linkedin.com/embed/feed/update/urn:li:activity:${id}`}
+                height={560}
+                width="100%"
+                title={`Terrasols LinkedIn post ${id}`}
+                loading="lazy"
+                allowFullScreen
+                className="block"
+              />
+            </div>
           ))}
         </div>
       </div>
