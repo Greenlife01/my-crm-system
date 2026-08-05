@@ -4,7 +4,7 @@ export const company = {
   cin: "U62099UP2024PTC205629",
   dpiit: "DIPP173992",
   website: "www.terrasols.earth",
-  emailPrimary: "manish@terrasols.earth",
+  phone: "+91-8789374657",
   emailInfo: "info@terrasols.earth",
   location: "Greater Noida, Uttar Pradesh, India",
   spv: {
@@ -51,8 +51,8 @@ export const legalLinks = [
 ];
 
 export const socialLinks = {
-  instagram: "https://instagram.com/terrasols",
-  linkedin: "https://linkedin.com/company/terrasols",
+  instagram: "https://www.instagram.com/terrasols_earth/",
+  linkedin: "https://www.linkedin.com/company/terrasols/?viewAsMember=true",
   youtube: "https://youtube.com/@terrasols",
   facebook: "https://facebook.com/terrasols",
 };
@@ -79,13 +79,17 @@ export const founders = [
   {
     name: "Manish Kumar",
     role: "Co-Founder & CEO",
-    email: "manish@terrasols.earth",
+    email: null,
+    linkedin: "https://www.linkedin.com/in/manish-kumar-singh-36599158/",
+    photo: "/team/manish-kumar.jpg",
     bio: "Manish leads Terrasols' strategy, carbon market partnerships, and commercial growth — driving the company's mission to make enhanced rock weathering a scalable, farmer-first climate solution across India.",
   },
   {
     name: "Vaibhav Tiwari",
     role: "Co-Founder & CSO/COO",
     email: null,
+    linkedin: "https://www.linkedin.com/in/vaibhavisearthling/",
+    photo: "/team/vaibhav-tiwari.jpg",
     bio: "Vaibhav leads field operations, MRV design, and the scientific programme behind Project Nirmatva — building the rigorous, primary-data-first monitoring infrastructure that underpins Terrasols' carbon removal claims.",
   },
 ];
@@ -93,18 +97,18 @@ export const founders = [
 export const advisoryBoard = [
   { name: "Dr. Bhupinder Singh", org: "ICAR-IARI Pusa" },
   { name: "Dr. Chandan Kumar Gupta", org: "ICAR-IARI Pusa" },
-  { name: "Dr. Deepti Singh", org: "JNU SOES — Science Programme Lead" },
   { name: "Advisors", org: "IISS | ISM Dhanbad | RRCAT" },
 ];
 
 export const fieldTeam = [
-  { name: "Arpit Pandey", role: "Field Operations Head" },
-  { name: "Madan Singh", role: "Lab Team, IARI-PUSA" },
-  { name: "Pavan Kumar", role: "Lab Team, IARI-PUSA" },
-  { name: "Akram", role: "Lab Team, JNU" },
-  { name: "Vivek", role: "Field Staff, Khandwa" },
-  { name: "Lalit Patel", role: "Field Staff, Khandwa" },
-  { name: "Anandram", role: "Field Staff, Khandwa" },
+  { name: "Dr. Deepti Singh", role: "JNU SOES — Science Programme Lead", photo: null, bio: null },
+  { name: "Arpit Pandey", role: "Field Operations Head", photo: null, bio: null },
+  { name: "Madan Singh", role: "Lab Team, IARI-PUSA", photo: null, bio: null },
+  { name: "Pavan Kumar", role: "Lab Team, IARI-PUSA", photo: null, bio: null },
+  { name: "Akram", role: "Lab Team, JNU", photo: null, bio: null },
+  { name: "Vivek", role: "Field Staff, Khandwa", photo: null, bio: null },
+  { name: "Lalit Patel", role: "Field Staff, Khandwa", photo: null, bio: null },
+  { name: "Anandram", role: "Field Staff, Khandwa", photo: null, bio: null },
 ];
 
 export const timeline = [
@@ -115,23 +119,9 @@ export const timeline = [
   },
   {
     date: "Early 2025",
-    title: "Isometric EW v1.2 Registration",
-    detail: "Project Nirmatva registered under the Isometric Enhanced Weathering Protocol v1.2.",
-  },
-  {
-    date: "March 2025",
-    title: "G2G Transaction Signed",
-    detail: "Nirmatva Carbon SPV formed; government-to-government transaction signed.",
-  },
-  {
-    date: "May 2025",
-    title: "First Commercial Revenue",
-    detail: "Terrasols reaches its first commercial revenue milestone.",
-  },
-  {
-    date: "July 2025",
-    title: "Pre-Seed SAFE Round Open",
-    detail: "Terrasols opens a pre-seed SAFE round to accelerate deployment.",
+    title: "Isometric EW Protocol — Pilot Selection",
+    detail:
+      "Project Nirmatva selected to pilot Enhanced Rock Weathering under the Isometric EW Protocol — one of the most rigorous carbon removal verification standards globally.",
   },
 ];
 

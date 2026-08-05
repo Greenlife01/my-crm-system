@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Download, CalendarDays } from "lucide-react";
+import { Download, CalendarDays, Newspaper } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
+import Marquee from "@/components/ui/Marquee";
 import { pressEvents, company } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -20,17 +21,48 @@ const newsMentions = [
 export default function PressPage() {
   return (
     <>
-      <PageHero eyebrow="Media & Press" title="News, Events, and Press Resources" />
+      <PageHero
+        eyebrow="Media & Press"
+        title="News, Events, and Press Resources"
+        image="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&q=80"
+      />
 
       <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-medium text-text-primary">News Mentions</h2>
+        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-xs font-semibold uppercase tracking-wide text-carbon-teal">
+              As Featured In
+            </span>
+          </div>
+          <div className="mt-8">
+            <Marquee
+              items={newsMentions.map((n) => (
+                <div
+                  key={n.source}
+                  className="flex h-16 w-52 items-center justify-center rounded-xl border border-border-subtle bg-earth-dark px-4 text-center text-sm font-semibold text-text-secondary transition-colors hover:border-carbon-teal/40"
+                >
+                  {n.source}
+                </div>
+              ))}
+            />
+          </div>
+
+          <h2 className="mt-16 font-display text-3xl font-medium text-text-primary">News Mentions</h2>
           <div className="mt-8 space-y-4">
             {newsMentions.map((n) => (
-              <div key={n.headline} className="rounded-2xl border border-border-subtle bg-earth-dark p-6">
-                <p className="text-xs font-semibold uppercase tracking-wide text-carbon-teal">{n.source}</p>
-                <p className="mt-2 font-display font-semibold text-text-primary">{n.headline}</p>
-                <p className="mt-2 text-xs text-text-muted">{n.date}</p>
+              <div
+                key={n.headline}
+                className="flex items-start gap-4 rounded-2xl border-l-4 border-carbon-teal bg-earth-dark p-6"
+                style={{ borderTopRightRadius: 16, borderBottomRightRadius: 16 }}
+              >
+                <Newspaper className="mt-1 h-5 w-5 shrink-0 text-carbon-teal" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-carbon-teal">
+                    {n.source}
+                  </p>
+                  <p className="mt-2 font-display font-semibold text-text-primary">{n.headline}</p>
+                  <p className="mt-2 text-xs text-text-muted">{n.date}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -42,8 +74,10 @@ export default function PressPage() {
           <h2 className="font-display text-3xl font-medium text-text-primary">Event Appearances</h2>
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {pressEvents.map((e) => (
-              <Card key={e.name}>
-                <CalendarDays className="h-5 w-5 text-carbon-teal" />
+              <Card key={e.name} style={{ borderLeft: "4px solid #EF9F27" }}>
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-harvest-amber/15 border border-harvest-amber/30">
+                  <CalendarDays className="h-5 w-5 text-harvest-amber" />
+                </span>
                 <p className="mt-3 font-display font-semibold text-text-primary">{e.name}</p>
                 <p className="mt-1 text-sm text-text-muted">{e.location}</p>
               </Card>
@@ -65,8 +99,8 @@ export default function PressPage() {
           </div>
           <p className="mt-6 text-sm text-text-muted">
             Press contact:{" "}
-            <a href={`mailto:${company.emailPrimary}`} className="text-carbon-teal">
-              {company.emailPrimary}
+            <a href={`tel:${company.phone}`} className="text-carbon-teal">
+              {company.phone}
             </a>
           </p>
         </div>

@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import PageHero from "@/components/ui/PageHero";
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import Badge from "@/components/ui/Badge";
+import StoryStatBlock from "@/components/stories/StoryStatBlock";
 import { farmerStories } from "@/lib/farmer-stories";
+
+const FIELD_IMAGE = "https://images.unsplash.com/photo-1620200423727-8127f75d7f53?w=1600&q=80";
 
 export async function generateStaticParams() {
   return farmerStories.map((story) => ({ slug: story.slug }));
@@ -26,17 +29,13 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
 
   return (
     <>
-      <SectionWrapper className="border-b border-border-subtle bg-earth-dark py-20">
-        <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
-          <Badge tone="amber">
-            {story.village}, {story.district}
-          </Badge>
-          <h1 className="mt-5 font-display text-3xl font-medium text-text-primary sm:text-4xl">
-            {story.name}
-          </h1>
-          <p className="mt-3 text-text-muted">{story.state} &middot; {story.cropType}</p>
-        </div>
-      </SectionWrapper>
+      <PageHero
+        eyebrow={`${story.village}, ${story.district}`}
+        title={story.name}
+        description={`${story.state} · ${story.cropType}`}
+        tone="amber"
+        image={FIELD_IMAGE}
+      />
 
       <SectionWrapper className="bg-soil-black py-20">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
@@ -53,15 +52,8 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
           <blockquote className="mt-10 text-xl text-text-primary">&ldquo;{story.quoteHindi}&rdquo;</blockquote>
           <p className="mt-2 italic text-text-muted">&ldquo;{story.quoteEnglish}&rdquo;</p>
 
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:w-64">
-            <div className="rounded-xl border border-border-subtle bg-earth-dark p-4 text-center">
-              <p className="font-data text-xl font-bold text-carbon-teal">{story.soilPhChange}</p>
-              <p className="mt-1 text-xs text-text-muted">Soil pH</p>
-            </div>
-            <div className="rounded-xl border border-border-subtle bg-earth-dark p-4 text-center">
-              <p className="font-data text-xl font-bold text-carbon-teal">{story.yieldChange}</p>
-              <p className="mt-1 text-xs text-text-muted">Yield</p>
-            </div>
+          <div className="mt-10">
+            <StoryStatBlock soilPhChange={story.soilPhChange} yieldChange={story.yieldChange} />
           </div>
 
           <div className="mt-10 space-y-4 text-text-secondary">

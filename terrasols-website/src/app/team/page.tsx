@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { UserRound, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { LinkedinIcon } from "@/components/ui/SocialIcons";
 import PageHero from "@/components/ui/PageHero";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Card from "@/components/ui/Card";
-import { founders, advisoryBoard, fieldTeam } from "@/lib/site-data";
+import Avatar from "@/components/ui/Avatar";
+import Marquee from "@/components/ui/Marquee";
+import { founders, advisoryBoard, fieldTeam, socialLinks } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Team",
   description:
-    "Meet the Co-Founders, science advisory board, and field & lab team behind Terrasols and Project Nirmatva.",
+    "Meet the Co-Founders, the Terrasols team, and the science advisory board behind Terrasols and Project Nirmatva.",
 };
 
 export default function TeamPage() {
@@ -22,9 +24,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {founders.map((founder) => (
               <Card key={founder.name} className="text-center">
-                <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-growth-green/15 text-growth-green">
-                  <UserRound className="h-12 w-12" />
-                </div>
+                <Avatar name={founder.name} photo={founder.photo} size={96} />
                 <p className="mt-5 font-display text-xl font-semibold text-text-primary">{founder.name}</p>
                 <p className="text-sm font-medium text-carbon-teal">{founder.role}</p>
                 <p className="mt-4 text-sm leading-relaxed text-text-muted">{founder.bio}</p>
@@ -37,13 +37,38 @@ export default function TeamPage() {
                       <Mail className="h-4 w-4" />
                     </a>
                   )}
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-border-subtle text-text-secondary hover:border-carbon-teal hover:text-carbon-teal">
+                  <a
+                    href={founder.linkedin ?? socialLinks.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-border-subtle text-text-secondary hover:border-carbon-teal hover:text-carbon-teal"
+                  >
                     <LinkedinIcon className="h-4 w-4" />
-                  </span>
+                  </a>
                 </div>
               </Card>
             ))}
           </div>
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper className="bg-white py-24">
+        <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
+          <h2 className="font-display text-3xl font-medium text-soil-black sm:text-4xl">Terrasols Team</h2>
+        </div>
+
+        <div className="mt-14">
+          <Marquee
+            speed={22}
+            items={fieldTeam.map((member) => (
+              <Card key={member.name} className="!border-black/10 !bg-white w-72 text-center sm:w-80">
+                <Avatar name={member.name} photo={member.photo} size={112} />
+                <p className="mt-5 font-display text-lg font-semibold text-soil-black">{member.name}</p>
+                <p className="mt-1 text-sm font-medium text-carbon-teal">{member.role}</p>
+                {member.bio && <p className="mt-3 text-sm leading-relaxed text-text-muted">{member.bio}</p>}
+              </Card>
+            ))}
+          />
         </div>
       </SectionWrapper>
 
@@ -54,26 +79,11 @@ export default function TeamPage() {
           </h2>
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {advisoryBoard.map((advisor) => (
-              <div key={advisor.name} className="rounded-2xl border border-border-subtle bg-earth-mid p-5 text-center">
-                <p className="font-display font-semibold text-text-primary">{advisor.name}</p>
+              <Card key={advisor.name} className="text-center">
+                <Avatar name={advisor.name} size={56} />
+                <p className="mt-4 font-display font-semibold text-text-primary">{advisor.name}</p>
                 <p className="mt-1 text-xs text-text-muted">{advisor.org}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
-
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">
-            Field &amp; Lab Team
-          </h2>
-          <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {fieldTeam.map((member) => (
-              <div key={member.name} className="rounded-xl border border-border-subtle bg-earth-dark p-4 text-center">
-                <p className="text-sm font-medium text-text-primary">{member.name}</p>
-                <p className="mt-1 text-xs text-text-muted">{member.role}</p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>

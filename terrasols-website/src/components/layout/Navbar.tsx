@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Sprout, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { navLinks } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
@@ -23,17 +24,15 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-all duration-300",
+        "sticky top-0 z-50 border-b transition-all duration-300",
         scrolled
-          ? "bg-soil-black/80 backdrop-blur-xl border-b border-border-subtle"
-          : "bg-transparent border-b border-transparent"
+          ? "border-[rgba(29,158,117,0.2)] bg-[rgba(4,13,6,0.8)] backdrop-blur-[20px]"
+          : "border-transparent bg-transparent"
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold text-text-primary">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-growth-green/15 text-growth-green">
-            <Sprout className="h-5 w-5" />
-          </span>
+          <Image src="/logo-mark.png" alt="" width={32} height={32} className="h-8 w-8" priority />
           Terrasols
         </Link>
 
@@ -43,7 +42,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-carbon-teal",
+                "nav-link-underline rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-carbon-teal",
                 pathname === link.href ? "text-carbon-teal" : "text-text-secondary"
               )}
             >

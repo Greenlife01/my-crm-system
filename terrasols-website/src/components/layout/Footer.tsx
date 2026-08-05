@@ -1,18 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Sprout, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { InstagramIcon, LinkedinIcon, YoutubeIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 import { company, footerLinks, legalLinks, socialLinks } from "@/lib/site-data";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border-subtle bg-earth-dark">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <footer className="noise-overlay noise-overlay--green relative border-t border-border-subtle bg-black">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 font-display text-xl font-semibold text-text-primary">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-growth-green/15 text-growth-green">
-                <Sprout className="h-5 w-5" />
-              </span>
+              <Image src="/logo-mark.png" alt="" width={36} height={36} className="h-9 w-9" />
               Terrasols
             </Link>
             <p className="mt-4 max-w-sm text-sm text-text-muted">
@@ -60,15 +59,16 @@ export default function Footer() {
             </h4>
             <ul className="mt-4 space-y-3 text-sm text-text-muted">
               <li className="flex items-start gap-2">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-carbon-teal" />
+                <a href={`tel:${company.phone}`} className="hover:text-carbon-teal">
+                  {company.phone}
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-carbon-teal" />
-                <span className="flex flex-col">
-                  <a href={`mailto:${company.emailPrimary}`} className="hover:text-carbon-teal">
-                    {company.emailPrimary}
-                  </a>
-                  <a href={`mailto:${company.emailInfo}`} className="hover:text-carbon-teal">
-                    {company.emailInfo}
-                  </a>
-                </span>
+                <a href={`mailto:${company.emailInfo}`} className="hover:text-carbon-teal">
+                  {company.emailInfo}
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-carbon-teal" />

@@ -5,11 +5,15 @@ export default function PageHero({
   title,
   description,
   tone = "green",
+  image,
+  overlay,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   tone?: "green" | "amber";
+  image?: string;
+  overlay?: string;
 }) {
   return (
     <section
@@ -19,6 +23,32 @@ export default function PageHero({
           : "bg-earth-dark"
       }`}
     >
+      {image && (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={image}
+            alt=""
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                overlay ??
+                (tone === "amber"
+                  ? "linear-gradient(135deg, rgba(61,43,31,0.85) 0%, rgba(10,10,10,0.9) 100%)"
+                  : "linear-gradient(135deg, rgba(10,26,12,0.85) 0%, rgba(10,10,10,0.9) 100%)"),
+            }}
+          />
+        </>
+      )}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(29,158,117,0.12),transparent_60%)]" />
       <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
         {eyebrow && (

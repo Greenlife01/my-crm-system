@@ -30,10 +30,20 @@ export default function InvestorsPage() {
       <SectionWrapper className="bg-soil-black py-24">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="font-display text-3xl font-medium text-text-primary">Traction</h2>
-          <ul className="mt-8 space-y-4">
+          <ul className="mt-8 space-y-3">
             {traction.map((t) => (
-              <li key={t} className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-growth-green" />
+              <li key={t} className="benefit-card flex items-center gap-3.5">
+                <span
+                  className="flex shrink-0 items-center justify-center rounded-full"
+                  style={{
+                    width: 36,
+                    height: 36,
+                    background: "rgba(29,158,117,0.15)",
+                    border: "1px solid rgba(29,158,117,0.3)",
+                  }}
+                >
+                  <CheckCircle2 className="h-4 w-4 text-growth-green" />
+                </span>
                 <span className="text-text-secondary">{t}</span>
               </li>
             ))}
@@ -41,16 +51,27 @@ export default function InvestorsPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+      <SectionWrapper className="noise-overlay relative bg-earth-dark py-24">
+        <div className="relative z-10 mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="font-display text-3xl font-medium text-text-primary">Why Now?</h2>
-          <p className="mt-5 text-text-secondary leading-relaxed">
-            India&apos;s carbon market infrastructure is maturing quickly — the Carbon Credit Trading
-            Scheme (CCTS) is rolling out domestically, while the EU&apos;s CBAM is reshaping export
-            economics for
-            Indian manufacturers. Together, these forces are driving unprecedented demand for verified,
-            permanent carbon removal — precisely the category Terrasols operates in, with a defensible
-            science and MRV moat.
+          <p className="mt-5 leading-relaxed text-text-secondary">
+            India&apos;s carbon market infrastructure is maturing quickly — the{" "}
+            <span
+              className="rounded-full px-2 py-0.5 text-sm font-medium"
+              style={{ background: "rgba(29,158,117,0.15)", color: "#5DCAA5" }}
+            >
+              Carbon Credit Trading Scheme (CCTS)
+            </span>{" "}
+            is rolling out domestically, while the EU&apos;s{" "}
+            <span
+              className="rounded-full px-2 py-0.5 text-sm font-medium"
+              style={{ background: "rgba(239,159,39,0.15)", color: "#EF9F27" }}
+            >
+              CBAM
+            </span>{" "}
+            is reshaping export economics for Indian manufacturers. Together, these forces are driving
+            unprecedented demand for verified, permanent carbon removal — precisely the category
+            Terrasols operates in, with a defensible science and MRV moat.
           </p>
         </div>
       </SectionWrapper>

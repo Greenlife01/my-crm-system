@@ -15,13 +15,14 @@ interface ButtonProps {
   target?: string;
   rel?: string;
   disabled?: boolean;
+  shimmer?: boolean;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-growth-green text-soil-black hover:bg-leaf-light hover:shadow-[0_0_40px_rgba(29,158,117,0.4)]",
+    "btn-liquid bg-growth-green text-soil-black hover:text-soil-black hover:shadow-[0_0_40px_rgba(29,158,117,0.4)]",
   secondary:
-    "bg-harvest-amber text-soil-black hover:brightness-110 hover:shadow-[0_0_40px_rgba(239,159,39,0.35)]",
+    "btn-liquid bg-harvest-amber text-soil-black hover:shadow-[0_0_40px_rgba(239,159,39,0.35)]",
   outline:
     "border border-border-subtle text-text-primary hover:border-carbon-teal hover:text-carbon-teal",
   ghost: "text-text-primary hover:text-carbon-teal",
@@ -38,10 +39,12 @@ export default function Button({
   target,
   rel,
   disabled,
+  shimmer = false,
 }: ButtonProps) {
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-medium transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none",
     variantStyles[variant],
+    shimmer && "btn-shimmer",
     className
   );
 
