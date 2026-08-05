@@ -23,7 +23,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {founders.map((founder) => (
               <Card key={founder.name} className="text-center">
-                <Avatar name={founder.name} size={96} />
+                <Avatar name={founder.name} photo={founder.photo} size={96} />
                 <p className="mt-5 font-display text-xl font-semibold text-text-primary">{founder.name}</p>
                 <p className="text-sm font-medium text-carbon-teal">{founder.role}</p>
                 <p className="mt-4 text-sm leading-relaxed text-text-muted">{founder.bio}</p>
@@ -37,7 +37,7 @@ export default function TeamPage() {
                     </a>
                   )}
                   <a
-                    href={socialLinks.linkedin}
+                    href={founder.linkedin ?? socialLinks.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex h-9 w-9 items-center justify-center rounded-full border border-border-subtle text-text-secondary hover:border-carbon-teal hover:text-carbon-teal"

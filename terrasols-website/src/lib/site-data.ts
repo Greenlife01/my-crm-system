@@ -80,12 +80,16 @@ export const founders = [
     name: "Manish Kumar",
     role: "Co-Founder & CEO",
     email: null,
+    linkedin: "https://www.linkedin.com/in/manish-kumar-singh-36599158/",
+    photo: null,
     bio: "Manish leads Terrasols' strategy, carbon market partnerships, and commercial growth — driving the company's mission to make enhanced rock weathering a scalable, farmer-first climate solution across India.",
   },
   {
     name: "Vaibhav Tiwari",
     role: "Co-Founder & CSO/COO",
     email: null,
+    linkedin: null,
+    photo: null,
     bio: "Vaibhav leads field operations, MRV design, and the scientific programme behind Project Nirmatva — building the rigorous, primary-data-first monitoring infrastructure that underpins Terrasols' carbon removal claims.",
   },
 ];
