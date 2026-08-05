@@ -51,7 +51,7 @@ export const legalLinks = [
 ];
 
 export const socialLinks = {
-  instagram: "https://instagram.com/terrasols",
+  instagram: "https://www.instagram.com/terrasols_earth/",
   linkedin: "https://www.linkedin.com/company/terrasols/?viewAsMember=true",
   youtube: "https://youtube.com/@terrasols",
   facebook: "https://facebook.com/terrasols",
