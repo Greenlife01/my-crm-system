@@ -1,4 +1,4 @@
-import { InstagramIcon } from "@/components/ui/SocialIcons";
+import { LinkedinIcon } from "@/components/ui/SocialIcons";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import { socialLinks } from "@/lib/site-data";
 
@@ -20,12 +20,12 @@ export default function InstagramGrid() {
             Follow the Field Work
           </h2>
           <a
-            href={socialLinks.instagram}
+            href={socialLinks.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-medium text-carbon-teal hover:text-leaf-light"
           >
-            <InstagramIcon className="h-4 w-4" /> @terrasols
+            <LinkedinIcon className="h-4 w-4" /> Terrasols
           </a>
         </div>
 
@@ -33,13 +33,13 @@ export default function InstagramGrid() {
           {placeholderPosts.map((caption, i) => (
             <a
               key={i}
-              href={socialLinks.instagram}
+              href={socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative aspect-square overflow-hidden rounded-xl border border-border-subtle bg-earth-dark"
             >
               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-growth-green/10 to-earth-mid text-text-muted">
-                <InstagramIcon className="h-6 w-6 opacity-40" />
+                <LinkedinIcon className="h-6 w-6 opacity-40" />
               </div>
               <div className="absolute inset-0 flex items-end bg-black/60 p-3 opacity-0 transition-opacity group-hover:opacity-100">
                 <p className="text-xs text-text-primary">{caption}</p>
