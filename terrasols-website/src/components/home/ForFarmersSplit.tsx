@@ -66,7 +66,7 @@ export default function ForFarmersSplit() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80"
+              src={`https://img.youtube.com/vi/${FARMER_STORY_YOUTUBE_ID}/maxresdefault.jpg`}
               alt=""
               style={{
                 position: "absolute",
