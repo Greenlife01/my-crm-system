@@ -102,13 +102,13 @@ export const advisoryBoard = [
 ];
 
 export const fieldTeam = [
-  { name: "Arpit Pandey", role: "Field Operations Head" },
-  { name: "Madan Singh", role: "Lab Team, IARI-PUSA" },
-  { name: "Pavan Kumar", role: "Lab Team, IARI-PUSA" },
-  { name: "Akram", role: "Lab Team, JNU" },
-  { name: "Vivek", role: "Field Staff, Khandwa" },
-  { name: "Lalit Patel", role: "Field Staff, Khandwa" },
-  { name: "Anandram", role: "Field Staff, Khandwa" },
+  { name: "Arpit Pandey", role: "Field Operations Head", photo: null, bio: null },
+  { name: "Madan Singh", role: "Lab Team, IARI-PUSA", photo: null, bio: null },
+  { name: "Pavan Kumar", role: "Lab Team, IARI-PUSA", photo: null, bio: null },
+  { name: "Akram", role: "Lab Team, JNU", photo: null, bio: null },
+  { name: "Vivek", role: "Field Staff, Khandwa", photo: null, bio: null },
+  { name: "Lalit Patel", role: "Field Staff, Khandwa", photo: null, bio: null },
+  { name: "Anandram", role: "Field Staff, Khandwa", photo: null, bio: null },
 ];
 
 export const timeline = [
