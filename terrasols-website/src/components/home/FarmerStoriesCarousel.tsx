@@ -23,13 +23,15 @@ export default function FarmerStoriesCarousel() {
   const story = farmerStories[index];
 
   return (
-    <SectionWrapper className="bg-earth-mid py-24">
+    <SectionWrapper className="bg-white py-24">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-medium text-text-primary sm:text-4xl">
+          <span className="text-xs font-semibold uppercase tracking-wide text-green-mid">
             Farmer Stories
+          </span>
+          <h2 className="mt-3 font-display text-3xl font-medium text-text-dark sm:text-4xl">
+            Real Voices From the Field
           </h2>
-          <p className="mt-4 text-text-muted">Real voices from the field.</p>
         </div>
 
         <div
@@ -44,40 +46,40 @@ export default function FarmerStoriesCarousel() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 gap-8 rounded-2xl border border-border-subtle bg-earth-dark p-8 sm:grid-cols-2"
+              className="grid grid-cols-1 gap-8 rounded-2xl border border-border-subtle bg-sage-light p-8 shadow-[0_16px_40px_rgba(10,46,26,0.06)] sm:grid-cols-2"
             >
               <button
                 onClick={() => lightbox.open(story.youtubeId)}
-                className="group relative flex aspect-video items-center justify-center overflow-hidden rounded-xl bg-soil-black"
+                className="group relative flex aspect-video items-center justify-center overflow-hidden rounded-xl bg-dark-green"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-growth-green/90 text-soil-black transition-transform group-hover:scale-110">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-bright/90 text-dark-green transition-transform group-hover:scale-110">
                   <Play className="h-6 w-6 fill-current" />
                 </div>
               </button>
 
               <div className="flex flex-col justify-center">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-growth-green/15 text-growth-green">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-primary/12 text-green-primary">
                     <User className="h-5 w-5" />
                   </span>
                   <div>
-                    <p className="font-display font-semibold text-text-primary">{story.name}</p>
+                    <p className="font-display font-semibold text-text-dark">{story.name}</p>
                     <p className="text-xs text-text-muted">
                       {story.village}, {story.district} &middot; {story.cropType}
                     </p>
                   </div>
                 </div>
 
-                <blockquote className="mt-4 text-text-secondary">&ldquo;{story.quoteHindi}&rdquo;</blockquote>
-                <p className="mt-1 text-sm italic text-text-muted">&ldquo;{story.quoteEnglish}&rdquo;</p>
+                <blockquote className="mt-4 text-text-dark">&ldquo;{story.quoteHindi}&rdquo;</blockquote>
+                <p className="mt-1 text-sm italic text-text-mid">&ldquo;{story.quoteEnglish}&rdquo;</p>
 
                 <div className="mt-5 flex gap-4">
-                  <div className="rounded-lg border border-border-subtle px-3 py-2">
-                    <p className="font-data text-sm font-semibold text-carbon-teal">{story.soilPhChange}</p>
+                  <div className="rounded-lg border border-border-subtle bg-white px-3 py-2">
+                    <p className="font-data text-sm font-semibold text-green-mid">{story.soilPhChange}</p>
                     <p className="text-[10px] uppercase text-text-muted">Soil pH</p>
                   </div>
-                  <div className="rounded-lg border border-border-subtle px-3 py-2">
-                    <p className="font-data text-sm font-semibold text-carbon-teal">{story.yieldChange}</p>
+                  <div className="rounded-lg border border-border-subtle bg-white px-3 py-2">
+                    <p className="font-data text-sm font-semibold text-green-mid">{story.yieldChange}</p>
                     <p className="text-[10px] uppercase text-text-muted">Yield</p>
                   </div>
                 </div>
@@ -92,7 +94,7 @@ export default function FarmerStoriesCarousel() {
                 onClick={() => setIndex(i)}
                 aria-label={`Show story ${i + 1}`}
                 className={`h-2 rounded-full transition-all ${
-                  i === index ? "w-6 bg-growth-green" : "w-2 bg-border-subtle"
+                  i === index ? "w-6 bg-green-primary" : "w-2 bg-border-subtle"
                 }`}
               />
             ))}

@@ -19,7 +19,7 @@ export default function NirmatvaMapClient() {
     <Map
       mapboxAccessToken={MAPBOX_TOKEN}
       initialViewState={{ latitude: 21.9, longitude: 76.2, zoom: 7.3 }}
-      mapStyle="mapbox://styles/mapbox/dark-v11"
+      mapStyle="mapbox://styles/mapbox/outdoors-v12"
       style={{ width: "100%", height: "100%" }}
     >
       <NavigationControl position="top-right" />
@@ -34,8 +34,8 @@ export default function NirmatvaMapClient() {
           }}
         >
           <button aria-label={farm.name} className="relative flex h-4 w-4 items-center justify-center">
-            <span className="absolute h-4 w-4 animate-pulse-glow rounded-full bg-growth-green/60" />
-            <span className="relative h-2.5 w-2.5 rounded-full bg-carbon-teal ring-2 ring-soil-black" />
+            <span className="absolute h-4 w-4 animate-pulse-glow rounded-full bg-green-primary/60" />
+            <span className="relative h-2.5 w-2.5 rounded-full bg-green-bright ring-2 ring-white" />
           </button>
         </Marker>
       ))}
@@ -49,13 +49,13 @@ export default function NirmatvaMapClient() {
           offset={12}
         >
           <div className="p-1 text-sm">
-            <p className="flex items-center gap-1 font-semibold text-text-primary">
-              <MapPin className="h-3.5 w-3.5 text-growth-green" /> {selected.name}
+            <p className="flex items-center gap-1 font-semibold text-text-dark">
+              <MapPin className="h-3.5 w-3.5 text-green-primary" /> {selected.name}
             </p>
             <p className="mt-1 text-text-muted">
               {selected.village}, {selected.district}
             </p>
-            <p className="mt-1 text-text-secondary">
+            <p className="mt-1 text-text-mid">
               {selected.hectares} ha &middot; {selected.tonnesCO2} t CO₂ removed
             </p>
           </div>

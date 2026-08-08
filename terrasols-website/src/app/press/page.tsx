@@ -22,14 +22,14 @@ export default function PressPage() {
     <>
       <PageHero eyebrow="Media & Press" title="News, Events, and Press Resources" />
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-medium text-text-primary">News Mentions</h2>
+          <h2 className="font-display text-3xl font-medium text-text-dark">News Mentions</h2>
           <div className="mt-8 space-y-4">
             {newsMentions.map((n) => (
-              <div key={n.headline} className="rounded-2xl border border-border-subtle bg-earth-dark p-6">
-                <p className="text-xs font-semibold uppercase tracking-wide text-carbon-teal">{n.source}</p>
-                <p className="mt-2 font-display font-semibold text-text-primary">{n.headline}</p>
+              <div key={n.headline} className="rounded-2xl border border-border-subtle bg-white p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-green-mid">{n.source}</p>
+                <p className="mt-2 font-display font-semibold text-text-dark">{n.headline}</p>
                 <p className="mt-2 text-xs text-text-muted">{n.date}</p>
               </div>
             ))}
@@ -37,14 +37,14 @@ export default function PressPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
+      <SectionWrapper className="bg-white py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-medium text-text-primary">Event Appearances</h2>
+          <h2 className="font-display text-3xl font-medium text-text-dark">Event Appearances</h2>
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {pressEvents.map((e) => (
               <Card key={e.name}>
-                <CalendarDays className="h-5 w-5 text-carbon-teal" />
-                <p className="mt-3 font-display font-semibold text-text-primary">{e.name}</p>
+                <CalendarDays className="h-5 w-5 text-green-mid" />
+                <p className="mt-3 font-display font-semibold text-text-dark">{e.name}</p>
                 <p className="mt-1 text-sm text-text-muted">{e.location}</p>
               </Card>
             ))}
@@ -52,9 +52,9 @@ export default function PressPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
-          <h2 className="font-display text-3xl font-medium text-text-primary">Press Kit</h2>
+          <h2 className="font-display text-3xl font-medium text-text-dark">Press Kit</h2>
           <p className="mt-4 text-text-muted">Logos, founder bios, and key facts — in one download.</p>
           <div className="mt-8 flex justify-center">
             <Button href="/press-kit.pdf" variant="outline">
@@ -65,7 +65,7 @@ export default function PressPage() {
           </div>
           <p className="mt-6 text-sm text-text-muted">
             Press contact:{" "}
-            <a href={`mailto:${company.emailPrimary}`} className="text-carbon-teal">
+            <a href={`mailto:${company.emailPrimary}`} className="text-green-mid">
               {company.emailPrimary}
             </a>
           </p>

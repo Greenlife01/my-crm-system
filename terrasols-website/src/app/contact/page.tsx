@@ -16,27 +16,27 @@ export default function ContactPage() {
     <>
       <PageHero eyebrow="Contact" title="Let's Talk" description="Tell us who you are, and we'll route you to the right team." />
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-2xl px-6 lg:px-8">
           <ContactTabs />
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
+      <SectionWrapper className="bg-white py-24">
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <h2 className="font-display text-2xl font-medium text-text-primary">Contact Details</h2>
-            <ul className="mt-6 space-y-4 text-text-secondary">
+            <h2 className="font-display text-2xl font-medium text-text-dark">Contact Details</h2>
+            <ul className="mt-6 space-y-4 text-text-mid">
               <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-carbon-teal" />
+                <Mail className="h-5 w-5 text-green-mid" />
                 <a href={`mailto:${company.emailPrimary}`}>{company.emailPrimary}</a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-carbon-teal" />
+                <Mail className="h-5 w-5 text-green-mid" />
                 <a href={`mailto:${company.emailInfo}`}>{company.emailInfo}</a>
               </li>
               <li className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-carbon-teal" />
+                <MapPin className="h-5 w-5 text-green-mid" />
                 {company.location}
               </li>
             </ul>
@@ -53,7 +53,7 @@ export default function ContactPage() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-border-subtle text-text-secondary transition-colors hover:border-carbon-teal hover:text-carbon-teal"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-border-subtle text-text-mid transition-colors hover:border-green-bright hover:text-green-mid"
                 >
                   <Icon className="h-5 w-5" />
                 </a>

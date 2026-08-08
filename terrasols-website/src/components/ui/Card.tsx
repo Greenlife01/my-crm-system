@@ -12,8 +12,8 @@ export default function Card({
   return (
     <div
       className={cn(
-        "rounded-2xl border border-border-subtle p-6 transition-all duration-300 hover:border-carbon-teal/40 hover:shadow-[0_0_40px_rgba(29,158,117,0.15)] hover:-translate-y-1",
-        glass ? "glass-card" : "bg-earth-dark",
+        "rounded-2xl border border-border-subtle p-6 shadow-[0_2px_16px_rgba(10,46,26,0.04)] transition-all duration-300 hover:border-green-primary/40 hover:shadow-[0_16px_40px_rgba(10,46,26,0.1)] hover:-translate-y-1",
+        glass ? "glass-card" : "bg-white",
         className
       )}
     >

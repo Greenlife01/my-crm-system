@@ -26,19 +26,19 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
 
   return (
     <>
-      <SectionWrapper className="border-b border-border-subtle bg-earth-dark py-20">
+      <SectionWrapper className="border-b border-border-subtle bg-white py-20">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <Badge tone="amber">
             {story.village}, {story.district}
           </Badge>
-          <h1 className="mt-5 font-display text-3xl font-medium text-text-primary sm:text-4xl">
+          <h1 className="mt-5 font-display text-3xl font-medium text-text-dark sm:text-4xl">
             {story.name}
           </h1>
           <p className="mt-3 text-text-muted">{story.state} &middot; {story.cropType}</p>
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-20">
+      <SectionWrapper className="bg-cream py-20">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <div className="aspect-video overflow-hidden rounded-2xl border border-border-subtle">
             <iframe
@@ -50,21 +50,21 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
             />
           </div>
 
-          <blockquote className="mt-10 text-xl text-text-primary">&ldquo;{story.quoteHindi}&rdquo;</blockquote>
+          <blockquote className="mt-10 text-xl text-text-dark">&ldquo;{story.quoteHindi}&rdquo;</blockquote>
           <p className="mt-2 italic text-text-muted">&ldquo;{story.quoteEnglish}&rdquo;</p>
 
           <div className="mt-10 grid grid-cols-2 gap-4 sm:w-64">
-            <div className="rounded-xl border border-border-subtle bg-earth-dark p-4 text-center">
-              <p className="font-data text-xl font-bold text-carbon-teal">{story.soilPhChange}</p>
+            <div className="rounded-xl border border-border-subtle bg-white p-4 text-center">
+              <p className="font-data text-xl font-bold text-green-mid">{story.soilPhChange}</p>
               <p className="mt-1 text-xs text-text-muted">Soil pH</p>
             </div>
-            <div className="rounded-xl border border-border-subtle bg-earth-dark p-4 text-center">
-              <p className="font-data text-xl font-bold text-carbon-teal">{story.yieldChange}</p>
+            <div className="rounded-xl border border-border-subtle bg-white p-4 text-center">
+              <p className="font-data text-xl font-bold text-green-mid">{story.yieldChange}</p>
               <p className="mt-1 text-xs text-text-muted">Yield</p>
             </div>
           </div>
 
-          <div className="mt-10 space-y-4 text-text-secondary">
+          <div className="mt-10 space-y-4 text-text-mid">
             <p>
               {story.name} farms {story.cropType.toLowerCase()} in {story.village}, a village in the{" "}
               {story.district} district of {story.state}. Since partnering with Terrasols under Project

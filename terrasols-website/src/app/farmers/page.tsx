@@ -64,16 +64,16 @@ export default function FarmersPage() {
         tone="amber"
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">
             What We Offer — Zero Cost, Always
           </h2>
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {offerings.map((o) => (
               <Card key={o.title} className="text-center">
-                <o.icon className="mx-auto h-6 w-6 text-harvest-amber" />
-                <p className="mt-4 font-display font-semibold text-text-primary">{o.title}</p>
+                <o.icon className="mx-auto h-6 w-6 text-amber" />
+                <p className="mt-4 font-display font-semibold text-text-dark">{o.title}</p>
                 <p className="mt-2 text-sm text-text-muted">{o.body}</p>
               </Card>
             ))}
@@ -81,13 +81,13 @@ export default function FarmersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
+      <SectionWrapper className="bg-white py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">Benefits</h2>
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">Benefits</h2>
           <div className="mt-14 grid grid-cols-2 gap-6 lg:grid-cols-4">
             {benefits.map((b) => (
               <div key={b.stat} className="text-center">
-                <p className="font-data text-2xl font-bold text-carbon-teal sm:text-3xl">{b.stat}</p>
+                <p className="font-data text-2xl font-bold text-green-mid sm:text-3xl">{b.stat}</p>
                 <p className="mt-2 text-xs text-text-muted sm:text-sm">{b.detail}</p>
               </div>
             ))}
@@ -95,17 +95,17 @@ export default function FarmersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">How to Join</h2>
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">How to Join</h2>
           <div className="relative mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="absolute top-10 left-0 right-0 hidden h-px bg-gradient-to-r from-transparent via-harvest-amber/50 to-transparent lg:block" />
+            <div className="absolute top-10 left-0 right-0 hidden h-px bg-gradient-to-r from-transparent via-amber/50 to-transparent lg:block" />
             {steps.map((s, i) => (
-              <div key={s.title} className="relative rounded-2xl border border-border-subtle bg-earth-dark p-6 text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-harvest-amber/15 text-harvest-amber">
+              <div key={s.title} className="relative rounded-2xl border border-border-subtle bg-white p-6 text-center">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-amber/15 text-amber">
                   <s.icon className="h-6 w-6" />
                 </div>
-                <p className="mt-4 font-display font-semibold text-text-primary">
+                <p className="mt-4 font-display font-semibold text-text-dark">
                   {i + 1}. {s.title}
                 </p>
                 <p className="mt-2 text-sm text-text-muted">{s.body}</p>
@@ -115,9 +115,9 @@ export default function FarmersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
+      <SectionWrapper className="bg-white py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">
             Farmer Testimonials
           </h2>
           <div className="mt-14">
@@ -126,18 +126,18 @@ export default function FarmersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">FAQ</h2>
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">FAQ</h2>
           <div className="mt-12">
             <Accordion items={faqs} />
           </div>
         </div>
       </SectionWrapper>
 
-      <SectionWrapper id="register" className="bg-earth-dark py-24">
+      <SectionWrapper id="register" className="bg-white py-24">
         <div className="mx-auto max-w-2xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">
             Register Your Land
           </h2>
           <p className="mt-3 text-center text-text-muted">

@@ -28,10 +28,10 @@ export default function BlogListClient({ posts }: { posts: BlogPostMeta[] }) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-14 overflow-hidden rounded-2xl border border-border-subtle bg-earth-dark p-8 transition-colors hover:border-carbon-teal/40 md:p-12"
+            className="mb-14 overflow-hidden rounded-2xl border border-border-subtle bg-white p-8 transition-colors hover:border-green-bright/40 md:p-12"
           >
             <Badge tone="teal">{categoryLabels[featured.category]}</Badge>
-            <p className="mt-4 font-display text-2xl font-medium text-text-primary md:text-3xl">
+            <p className="mt-4 font-display text-2xl font-medium text-text-dark md:text-3xl">
               {featured.title}
             </p>
             <p className="mt-3 max-w-2xl text-text-muted">{featured.excerpt}</p>
@@ -50,8 +50,8 @@ export default function BlogListClient({ posts }: { posts: BlogPostMeta[] }) {
             className={cn(
               "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
               active === f.id
-                ? "border-growth-green bg-growth-green/15 text-carbon-teal"
-                : "border-border-subtle text-text-muted hover:text-text-primary"
+                ? "border-green-primary bg-green-primary/15 text-green-mid"
+                : "border-border-subtle text-text-muted hover:text-text-dark"
             )}
           >
             {f.label}
@@ -64,7 +64,7 @@ export default function BlogListClient({ posts }: { posts: BlogPostMeta[] }) {
           <Link key={post.slug} href={`/blog/${post.slug}`}>
             <Card className="h-full">
               <Badge tone="teal">{categoryLabels[post.category]}</Badge>
-              <p className="mt-4 font-display text-lg font-semibold text-text-primary">{post.title}</p>
+              <p className="mt-4 font-display text-lg font-semibold text-text-dark">{post.title}</p>
               <p className="mt-2 line-clamp-3 text-sm text-text-muted">{post.excerpt}</p>
               <p className="mt-4 text-xs text-text-muted">{post.readTime}</p>
             </Card>

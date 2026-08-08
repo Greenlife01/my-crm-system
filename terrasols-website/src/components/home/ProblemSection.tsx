@@ -18,13 +18,16 @@ const stats = [
 
 export default function ProblemSection() {
   return (
-    <SectionWrapper className="bg-soil-black py-24">
+    <SectionWrapper className="bg-sage-light py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-medium text-text-primary sm:text-4xl">
+          <span className="text-xs font-semibold uppercase tracking-wide text-green-mid">
+            The Crisis
+          </span>
+          <h2 className="mt-3 font-display text-3xl font-medium text-text-dark sm:text-4xl">
             India&apos;s Soil Is in Crisis
           </h2>
-          <p className="mt-4 text-text-muted">
+          <p className="mt-4 text-text-mid">
             A dependency on imported fertiliser and a system that leaves smallholders out of the carbon
             economy.
           </p>
@@ -34,8 +37,8 @@ export default function ProblemSection() {
           {stats.map((stat, i) => (
             <SectionWrapper key={stat.label} delay={i * 0.1}>
               <Card className="h-full text-center">
-                <p className="font-data text-3xl font-bold text-harvest-amber sm:text-4xl">{stat.value}</p>
-                <p className="mt-3 text-sm text-text-secondary">{stat.label}</p>
+                <p className="font-data text-3xl font-bold text-amber sm:text-4xl">{stat.value}</p>
+                <p className="mt-3 text-sm text-text-mid">{stat.label}</p>
               </Card>
             </SectionWrapper>
           ))}

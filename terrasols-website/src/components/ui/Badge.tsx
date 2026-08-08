@@ -1,12 +1,13 @@
 import { cn } from "@/lib/utils";
 
-type BadgeTone = "green" | "amber" | "teal" | "neutral";
+type BadgeTone = "green" | "amber" | "teal" | "neutral" | "blue";
 
 const toneStyles: Record<BadgeTone, string> = {
-  green: "bg-growth-green/15 text-carbon-teal border-growth-green/30",
-  amber: "bg-harvest-amber/15 text-harvest-amber border-harvest-amber/30",
-  teal: "bg-carbon-teal/10 text-carbon-teal border-carbon-teal/30",
-  neutral: "bg-white/5 text-text-secondary border-border-subtle",
+  green: "bg-green-primary/10 text-green-mid border-green-primary/25",
+  amber: "bg-amber/10 text-soil-brown border-amber/30",
+  teal: "bg-green-bright/15 text-green-mid border-green-bright/30",
+  blue: "bg-blue-mid/10 text-blue-mid border-blue-mid/25",
+  neutral: "bg-black/[0.03] text-text-mid border-border-subtle",
 };
 
 export default function Badge({

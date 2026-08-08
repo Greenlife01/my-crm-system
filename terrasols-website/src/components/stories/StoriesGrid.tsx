@@ -28,7 +28,7 @@ export default function StoriesGrid() {
                 onClick={() => setState(s)}
                 className={cn(
                   "rounded-full border px-3 py-1 text-xs font-medium",
-                  state === s ? "border-growth-green bg-growth-green/15 text-carbon-teal" : "border-border-subtle text-text-muted"
+                  state === s ? "border-green-primary bg-green-primary/15 text-green-mid" : "border-border-subtle text-text-muted"
                 )}
               >
                 {s === "all" ? "All States" : s}
@@ -45,7 +45,7 @@ export default function StoriesGrid() {
                 onClick={() => setCrop(c)}
                 className={cn(
                   "rounded-full border px-3 py-1 text-xs font-medium",
-                  crop === c ? "border-growth-green bg-growth-green/15 text-carbon-teal" : "border-border-subtle text-text-muted"
+                  crop === c ? "border-green-primary bg-green-primary/15 text-green-mid" : "border-border-subtle text-text-muted"
                 )}
               >
                 {c === "all" ? "All Crops" : c}
@@ -60,19 +60,19 @@ export default function StoriesGrid() {
           <Link
             key={story.slug}
             href={`/stories/${story.slug}`}
-            className="group overflow-hidden rounded-2xl border border-border-subtle bg-earth-dark transition-colors hover:border-carbon-teal/40"
+            className="group overflow-hidden rounded-2xl border border-border-subtle bg-white transition-colors hover:border-green-bright/40"
           >
-            <div className="relative flex aspect-video items-center justify-center bg-earth-mid">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-growth-green/90 text-soil-black transition-transform group-hover:scale-110">
+            <div className="relative flex aspect-video items-center justify-center bg-sage-light">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-primary/90 text-dark-green transition-transform group-hover:scale-110">
                 <Play className="h-5 w-5 fill-current" />
               </div>
             </div>
             <div className="p-5">
-              <p className="font-display font-semibold text-text-primary">{story.name}</p>
+              <p className="font-display font-semibold text-text-dark">{story.name}</p>
               <p className="mt-1 text-xs text-text-muted">
                 {story.village}, {story.district} &middot; {story.cropType}
               </p>
-              <p className="mt-3 font-data text-sm text-carbon-teal">{story.yieldChange}</p>
+              <p className="mt-3 font-data text-sm text-green-mid">{story.yieldChange}</p>
             </div>
           </Link>
         ))}

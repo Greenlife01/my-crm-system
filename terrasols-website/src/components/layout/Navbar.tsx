@@ -25,13 +25,13 @@ export default function Navbar() {
       className={cn(
         "sticky top-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-soil-black/80 backdrop-blur-xl border-b border-border-subtle"
+          ? "bg-cream/85 backdrop-blur-xl border-b border-border-subtle shadow-[0_1px_20px_rgba(10,46,26,0.05)]"
           : "bg-transparent border-b border-transparent"
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold text-text-primary">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-growth-green/15 text-growth-green">
+        <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold text-text-dark">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-primary/12 text-green-primary">
             <Sprout className="h-5 w-5" />
           </span>
           Terrasols
@@ -43,8 +43,8 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-carbon-teal",
-                pathname === link.href ? "text-carbon-teal" : "text-text-secondary"
+                "rounded-full px-3 py-2 text-sm font-medium transition-colors hover:text-green-mid",
+                pathname === link.href ? "text-green-mid" : "text-text-mid"
               )}
             >
               {link.label}
@@ -54,16 +54,22 @@ export default function Navbar() {
             href="https://carbon-nex.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-1 flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-harvest-amber transition-colors hover:text-leaf-light"
+            className="ml-1 flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-blue-mid transition-colors hover:text-blue-accent"
           >
             CarbonNex <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
+          <Link
+            href="/contact"
+            className="ml-2 rounded-full bg-green-primary px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-green-mid hover:shadow-[0_8px_24px_rgba(29,158,117,0.3)]"
+          >
+            Get in touch
+          </Link>
         </div>
 
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-border-subtle text-text-primary lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-border-subtle text-text-dark lg:hidden"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -75,7 +81,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 top-[65px] z-40 flex flex-col gap-2 overflow-y-auto bg-soil-black px-6 py-8 lg:hidden"
+            className="fixed inset-0 top-[65px] z-40 flex flex-col gap-2 overflow-y-auto bg-cream px-6 py-8 lg:hidden"
           >
             {navLinks.map((link, i) => (
               <motion.div
@@ -89,7 +95,7 @@ export default function Navbar() {
                   onClick={() => setOpen(false)}
                   className={cn(
                     "block rounded-lg px-4 py-3 text-lg font-medium",
-                    pathname === link.href ? "text-carbon-teal" : "text-text-primary"
+                    pathname === link.href ? "text-green-mid" : "text-text-dark"
                   )}
                 >
                   {link.label}
@@ -101,7 +107,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-2 flex items-center gap-1 rounded-lg px-4 py-3 text-lg font-medium text-harvest-amber"
+              className="mt-2 flex items-center gap-1 rounded-lg px-4 py-3 text-lg font-medium text-blue-mid"
             >
               CarbonNex <ArrowUpRight className="h-4 w-4" />
             </a>
