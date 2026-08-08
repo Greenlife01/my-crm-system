@@ -10,8 +10,9 @@ const linkedinPostIds = [
 
 export default function InstagramGrid() {
   return (
-    <SectionWrapper className="bg-soil-black py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+      <div className="bg-gradient-ambient-b pointer-events-none absolute inset-0" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           <h2 className="font-display text-3xl font-medium text-text-primary sm:text-4xl">
             Follow the Field Work
