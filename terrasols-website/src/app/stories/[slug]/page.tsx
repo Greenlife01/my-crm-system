@@ -37,8 +37,9 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         image={FIELD_IMAGE}
       />
 
-      <SectionWrapper className="bg-soil-black py-20">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-20">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-3xl px-6 lg:px-8">
           <div className="aspect-video overflow-hidden rounded-2xl border border-border-subtle">
             <iframe
               className="h-full w-full"

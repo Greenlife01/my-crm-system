@@ -50,14 +50,15 @@ export default function BuyersPage() {
         image="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=1600&q=80"
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             Why ERW Credits?
           </h2>
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {reasons.map((r) => (
-              <Card key={r.title} className="h-full" style={{ borderLeft: `4px solid ${r.accent}` }}>
+              <Card key={r.title} glass className="h-full" style={{ borderLeft: `4px solid ${r.accent}` }}>
                 <span
                   className="flex h-11 w-11 items-center justify-center rounded-full"
                   style={{ background: `${r.accent}26`, border: `1px solid ${r.accent}4D` }}
@@ -72,8 +73,9 @@ export default function BuyersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-earth-dark py-24">
+        <div className="bg-gradient-ambient-b pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-5xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             Our Supply Pipeline
           </h2>
@@ -113,8 +115,9 @@ export default function BuyersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
-        <div className="mx-auto max-w-2xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-earth-dark py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-2xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             Request an Offtake Discussion
           </h2>

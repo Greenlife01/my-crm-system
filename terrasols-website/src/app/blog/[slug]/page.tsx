@@ -38,8 +38,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
-      <SectionWrapper className="border-b border-border-subtle bg-earth-dark py-20">
-        <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
+      <SectionWrapper className="relative overflow-hidden border-b border-border-subtle bg-earth-dark py-20">
+        <div className="bg-gradient-ambient-b pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-3xl px-6 text-center lg:px-8">
           <Badge tone="teal">{categoryLabels[post.category]}</Badge>
           <h1 className="mt-5 font-display text-3xl font-medium text-text-primary sm:text-4xl">
             {post.title}
@@ -55,7 +56,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <article className="mx-auto max-w-3xl px-6 lg:px-8">
           <MDXRemote source={post.content} components={mdxComponents} />
 
-          <Card className="mt-16 flex items-center gap-4">
+          <Card glass className="mt-16 flex items-center gap-4">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-growth-green/15 text-growth-green">
               <UserRound className="h-6 w-6" />
             </div>
@@ -73,13 +74,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </SectionWrapper>
 
       {relatedPosts.length > 0 && (
-        <SectionWrapper className="bg-earth-dark py-20">
-          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        <SectionWrapper className="relative overflow-hidden bg-earth-dark py-20">
+          <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+          <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
             <h2 className="font-display text-2xl font-medium text-text-primary">Related Posts</h2>
             <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
               {relatedPosts.map((p) => (
                 <Link key={p.slug} href={`/blog/${p.slug}`}>
-                  <Card className="h-full">
+                  <Card glass className="h-full">
                     <Badge tone="teal">{categoryLabels[p.category]}</Badge>
                     <p className="mt-4 font-display font-semibold text-text-primary">{p.title}</p>
                     <p className="mt-2 line-clamp-2 text-sm text-text-muted">{p.excerpt}</p>

@@ -31,14 +31,16 @@ export default function WorkPage() {
         description="Every project line we run is built around measurable, verifiable climate impact."
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {projects.map((project, i) => {
               const meta = projectMeta[i];
               return (
                 <SectionWrapper key={project.title} delay={i * 0.08}>
                   <Card
+                    glass
                     className="h-full"
                     style={{ borderLeft: `4px solid ${meta.accent}` }}
                   >

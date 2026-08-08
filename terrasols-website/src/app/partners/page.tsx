@@ -30,13 +30,14 @@ export default function PartnersPage() {
         image="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=80"
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-5xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {partners.map((partner, i) => {
               const meta = partnerMeta[i];
               return (
-                <Card key={partner.name} className="h-full" style={{ borderLeft: `4px solid ${meta.accent}` }}>
+                <Card key={partner.name} glass className="h-full" style={{ borderLeft: `4px solid ${meta.accent}` }}>
                   <div className="flex items-start gap-4">
                     <span
                       className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full"

@@ -28,8 +28,9 @@ export default function ContactPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 px-6 lg:grid-cols-2 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-earth-dark py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto grid max-w-5xl grid-cols-1 gap-10 px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2 className="font-display text-2xl font-medium text-text-primary">Contact Details</h2>
             <ul className="mt-6 space-y-3">

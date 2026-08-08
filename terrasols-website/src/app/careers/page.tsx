@@ -36,8 +36,9 @@ export default function CareersPage() {
         description="We're hiring across field operations, science, MRV, partnerships, and software."
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-5xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">Open Roles</h2>
           <div className="mt-14 space-y-4">
             {openRoles.map((role, i) => {
@@ -106,14 +107,15 @@ export default function CareersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-earth-dark py-24">
+        <div className="bg-gradient-ambient-b pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-5xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             Why Terrasols?
           </h2>
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
             {whyUs.map((w) => (
-              <Card key={w.title} className="h-full" style={{ borderLeft: `4px solid ${w.accent}` }}>
+              <Card key={w.title} glass className="h-full" style={{ borderLeft: `4px solid ${w.accent}` }}>
                 <w.icon className="h-6 w-6" style={{ color: w.accent }} />
                 <p className="mt-4 font-display font-semibold text-text-primary">{w.title}</p>
                 <p className="mt-2 text-sm text-text-muted">{w.body}</p>
@@ -131,8 +133,9 @@ export default function CareersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper id="apply" className="bg-soil-black py-24">
-        <div className="mx-auto max-w-2xl px-6 lg:px-8">
+      <SectionWrapper id="apply" className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-2xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">Apply</h2>
           <div className="mt-10">
             <CareerApplicationForm />

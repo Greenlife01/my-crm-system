@@ -68,14 +68,15 @@ export default function FarmersPage() {
         overlay="linear-gradient(135deg, rgba(42,21,0,0.88) 0%, rgba(20,35,10,0.82) 100%)"
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             What We Offer — Zero Cost, Always
           </h2>
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {offerings.map((o) => (
-              <Card key={o.title} className="text-center">
+              <Card key={o.title} glass className="text-center">
                 <o.icon className="mx-auto h-6 w-6 text-harvest-amber" />
                 <p className="mt-4 font-display font-semibold text-text-primary">{o.title}</p>
                 <p className="mt-2 text-sm text-text-muted">{o.body}</p>
@@ -85,8 +86,9 @@ export default function FarmersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-earth-dark py-24">
+        <div className="bg-gradient-ambient-b pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">Benefits</h2>
           <div className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-4">
             {benefits.map((b, i) => (
@@ -112,13 +114,14 @@ export default function FarmersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">How to Join</h2>
           <div className="relative mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <div className="absolute top-11 left-0 right-0 hidden h-px bg-gradient-to-r from-transparent via-harvest-amber/50 to-transparent lg:block" />
             {steps.map((s, i) => (
-              <Card key={s.title} className="relative text-center">
+              <Card key={s.title} glass className="relative text-center">
                 <span
                   className="absolute -top-3 left-1/2 flex h-7 w-7 -translate-x-1/2 items-center justify-center rounded-full font-data text-xs font-bold"
                   style={{ background: "#EF9F27", color: "#0A1A0C" }}
@@ -136,8 +139,9 @@ export default function FarmersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-earth-dark py-24">
+        <div className="bg-gradient-ambient-b pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             Farmer Testimonials
           </h2>
@@ -147,8 +151,9 @@ export default function FarmersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">FAQ</h2>
           <div className="mt-12">
             <Accordion items={faqs} />
@@ -156,8 +161,9 @@ export default function FarmersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper id="register" className="bg-earth-dark py-24">
-        <div className="mx-auto max-w-2xl px-6 lg:px-8">
+      <SectionWrapper id="register" className="relative overflow-hidden bg-earth-dark py-24">
+        <div className="bg-gradient-ambient-b pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-2xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             Register Your Land
           </h2>

@@ -62,7 +62,7 @@ export default function BlogListClient({ posts }: { posts: BlogPostMeta[] }) {
       <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
         {filtered.map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`}>
-            <Card className="h-full">
+            <Card glass className="h-full">
               <Badge tone="teal">{categoryLabels[post.category]}</Badge>
               <p className="mt-4 font-display text-lg font-semibold text-text-primary">{post.title}</p>
               <p className="mt-2 line-clamp-3 text-sm text-text-muted">{post.excerpt}</p>

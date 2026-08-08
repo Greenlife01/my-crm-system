@@ -27,8 +27,9 @@ export default function InvestorsPage() {
         title="Backing India&apos;s Enhanced Rock Weathering Infrastructure"
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="font-display text-3xl font-medium text-text-primary">Traction</h2>
           <ul className="mt-8 space-y-3">
             {traction.map((t) => (
@@ -76,8 +77,9 @@ export default function InvestorsPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-2xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-b pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-2xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             Request Investor Deck
           </h2>
