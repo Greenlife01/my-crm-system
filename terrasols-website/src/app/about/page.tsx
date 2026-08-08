@@ -50,6 +50,7 @@ export default function AboutPage() {
       />
 
       <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
         <div
           aria-hidden
           className="pointer-events-none absolute select-none font-display"
@@ -100,8 +101,9 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-earth-dark py-24">
+        <div className="bg-gradient-ambient-b pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">Milestones</h2>
           <div className="mt-14">
             <MilestoneTimeline items={timeline} />
@@ -109,14 +111,15 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             Why ERW? Why India? Why Now?
           </h2>
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
             {whyCards.map((c) => (
-              <Card key={c.title} className="h-full" style={{ borderLeft: `4px solid ${c.accent}` }}>
+              <Card key={c.title} glass className="h-full" style={{ borderLeft: `4px solid ${c.accent}` }}>
                 <p className="font-display text-xl font-semibold" style={{ color: c.accent }}>
                   {c.title}
                 </p>
@@ -127,8 +130,9 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-mid py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-earth-mid py-24">
+        <div className="bg-gradient-ambient-b pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-3xl px-6 text-center lg:px-8">
           <h2 className="font-display text-3xl font-medium text-text-primary">Our Principles</h2>
           <ul className="mx-auto mt-10 max-w-lg space-y-4 text-left">
             {principles.map((p) => (

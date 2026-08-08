@@ -18,9 +18,7 @@ export default function PageHero({
   return (
     <section
       className={`relative overflow-hidden border-b border-border-subtle py-24 ${
-        tone === "amber"
-          ? "bg-[linear-gradient(135deg,rgba(61,43,31,0.6),rgba(239,159,39,0.06))]"
-          : "bg-earth-dark"
+        tone === "amber" ? "bg-earth-dark bg-gradient-mesh-warm" : "bg-earth-dark bg-gradient-mesh-deep"
       }`}
     >
       {image && (

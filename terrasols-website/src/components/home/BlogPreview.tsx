@@ -9,8 +9,9 @@ export default function BlogPreview() {
   const posts = getAllPosts().slice(0, 3);
 
   return (
-    <SectionWrapper className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <SectionWrapper className="relative overflow-hidden bg-white py-24">
+      <div className="bg-gradient-light-vignette pointer-events-none absolute inset-0" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
             <span className="text-xs font-semibold uppercase tracking-wide text-carbon-teal">
@@ -32,7 +33,7 @@ export default function BlogPreview() {
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {posts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <Card className="h-full !border-black/10 !bg-white">
+              <Card className="h-full" glass="light">
                 <Badge
                   tone="teal"
                   className="!bg-growth-green/10 !text-growth-green !border-growth-green/30"

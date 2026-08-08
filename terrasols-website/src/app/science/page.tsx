@@ -56,8 +56,9 @@ export default function SciencePage() {
         description="Enhanced Rock Weathering, explained — from chemistry to verification."
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             The ERW Mechanism
           </h2>
@@ -125,8 +126,9 @@ export default function SciencePage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-b pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl font-medium text-text-primary">
             MRV Methodology
           </h2>
@@ -136,7 +138,7 @@ export default function SciencePage() {
           </p>
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
             {mrvPoints.map((p) => (
-              <Card key={p.title}>
+              <Card key={p.title} glass>
                 <span
                   className="flex h-12 w-12 items-center justify-center rounded-full"
                   style={{ background: "rgba(93,202,165,0.15)", border: "1px solid rgba(93,202,165,0.3)" }}

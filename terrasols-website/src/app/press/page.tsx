@@ -27,8 +27,9 @@ export default function PressPage() {
         image="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&q=80"
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-wide text-carbon-teal">
               As Featured In
@@ -69,12 +70,13 @@ export default function PressPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-earth-dark py-24">
+        <div className="bg-gradient-ambient-b pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
           <h2 className="font-display text-3xl font-medium text-text-primary">Event Appearances</h2>
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {pressEvents.map((e) => (
-              <Card key={e.name} style={{ borderLeft: "4px solid #EF9F27" }}>
+              <Card key={e.name} glass style={{ borderLeft: "4px solid #EF9F27" }}>
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-harvest-amber/15 border border-harvest-amber/30">
                   <CalendarDays className="h-5 w-5 text-harvest-amber" />
                 </span>
@@ -86,8 +88,9 @@ export default function PressPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-24">
-        <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
+      <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+        <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-2xl px-6 text-center lg:px-8">
           <h2 className="font-display text-3xl font-medium text-text-primary">Press Kit</h2>
           <p className="mt-4 text-text-muted">Logos, founder bios, and key facts — in one download.</p>
           <div className="mt-8 flex justify-center">

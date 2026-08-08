@@ -5,8 +5,9 @@ import { scienceAdvisors } from "@/lib/site-data";
 
 export default function ScienceCredibility() {
   return (
-    <SectionWrapper className="bg-soil-black py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <SectionWrapper className="relative overflow-hidden bg-soil-black py-24">
+      <div className="bg-gradient-ambient-a pointer-events-none absolute inset-0" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-wide text-carbon-teal">
             Science Credibility
