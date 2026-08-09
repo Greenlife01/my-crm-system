@@ -13,12 +13,12 @@ export default function FarmerVideoGrid() {
         <button
           key={story.slug}
           onClick={() => lightbox.open(story.youtubeId)}
-          className="group relative flex aspect-video items-center justify-center overflow-hidden rounded-xl border border-border-subtle bg-earth-dark"
+          className="group relative flex aspect-video items-center justify-center overflow-hidden rounded-xl border border-border-subtle bg-white"
         >
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-growth-green/90 text-soil-black transition-transform group-hover:scale-110">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-primary/90 text-dark-green transition-transform group-hover:scale-110">
             <Play className="h-5 w-5 fill-current" />
           </div>
-          <p className="absolute bottom-2 left-2 text-xs font-medium text-text-primary">{story.name}</p>
+          <p className="absolute bottom-2 left-2 text-xs font-medium text-text-dark">{story.name}</p>
         </button>
       ))}
       <VideoLightbox id={lightbox.activeId} onClose={lightbox.close} />

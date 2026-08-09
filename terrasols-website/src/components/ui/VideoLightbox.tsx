@@ -27,7 +27,7 @@ export function VideoLightbox({ id, onClose }: { id: string | null; onClose: () 
           <div className="relative aspect-video w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={onClose}
-              className="absolute -top-10 right-0 text-text-primary"
+              className="absolute -top-10 right-0 text-white"
               aria-label="Close video"
             >
               <X className="h-6 w-6" />

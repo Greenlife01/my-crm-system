@@ -15,7 +15,7 @@ export default function BlogPage() {
   return (
     <>
       <PageHero eyebrow="Blog" title="Notes From the Field and the Lab" />
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <BlogListClient posts={posts} />
         </div>

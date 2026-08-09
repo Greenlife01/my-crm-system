@@ -4,3 +4,4 @@ crm.db
 *.db-journal
 *.db-shm
 *.db-wal
+__pycache__/

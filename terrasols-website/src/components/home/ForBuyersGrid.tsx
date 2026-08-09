@@ -1,6 +1,5 @@
 import { ShieldCheck, LineChart, Database, TrendingUp, FileCheck } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 
 const points = [
@@ -13,29 +12,33 @@ const points = [
 
 export default function ForBuyersGrid() {
   return (
-    <SectionWrapper className="bg-earth-dark py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <SectionWrapper className="relative overflow-hidden bg-dark-green py-24">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(93,202,165,0.14),transparent_60%)]" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-wide text-carbon-teal">
+            <span className="text-xs font-semibold uppercase tracking-wide text-green-bright">
               For Buyers
             </span>
-            <h2 className="mt-3 font-display text-3xl font-medium text-text-primary sm:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-medium text-white sm:text-4xl">
               Permanent Carbon Removal. Verified. Scalable.
             </h2>
           </div>
-          <Button href="/buyers" variant="outline">
+          <Button href="/buyers" variant="dark">
             Request an offtake discussion
           </Button>
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {points.map((p) => (
-            <Card key={p.title}>
-              <p.icon className="h-6 w-6 text-carbon-teal" />
-              <p className="mt-4 font-display font-semibold text-text-primary">{p.title}</p>
-              <p className="mt-2 text-sm text-text-muted">{p.description}</p>
-            </Card>
+            <div
+              key={p.title}
+              className="rounded-2xl border border-border-subtle-dark bg-white/[0.04] p-6 backdrop-blur-sm transition-all duration-300 hover:border-green-bright/40 hover:bg-white/[0.07] hover:-translate-y-1"
+            >
+              <p.icon className="h-6 w-6 text-green-bright" />
+              <p className="mt-4 font-display font-semibold text-white">{p.title}</p>
+              <p className="mt-2 text-sm text-text-on-dark-mid">{p.description}</p>
+            </div>
           ))}
         </div>
       </div>

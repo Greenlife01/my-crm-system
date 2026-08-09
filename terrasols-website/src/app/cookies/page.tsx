@@ -34,7 +34,7 @@ export default function CookiesPage() {
       <h2>Contact</h2>
       <p>
         Questions about this policy can be directed to{" "}
-        <a href={`mailto:${company.emailInfo}`} className="text-carbon-teal">
+        <a href={`mailto:${company.emailInfo}`} className="text-green-mid">
           {company.emailInfo}
         </a>
         .

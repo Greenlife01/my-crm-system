@@ -20,14 +20,14 @@ export default function WorkPage() {
         description="Every project line we run is built around measurable, verifiable climate impact."
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {projects.map((project, i) => (
               <SectionWrapper key={project.title} delay={i * 0.08}>
                 <Card className="h-full">
                   <div className="flex items-start justify-between gap-4">
-                    <p className="font-display text-xl font-semibold text-text-primary">
+                    <p className="font-display text-xl font-semibold text-text-dark">
                       {project.title}
                     </p>
                     <StatusBadge status={project.status} />

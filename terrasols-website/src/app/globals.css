@@ -1,63 +1,76 @@
+@import url("https://fonts.cdnfonts.com/css/clash-display");
+@import url("https://fonts.cdnfonts.com/css/satoshi");
 @import "tailwindcss";
 
 :root {
-  /* Primary */
-  --soil-black: #0a1a0c;
-  --earth-dark: #0f1f10;
-  --earth-mid: #1a2e1c;
-
-  /* Accent — Life */
-  --growth-green: #1d9e75;
-  --carbon-teal: #5dcaa5;
-  --leaf-light: #9fe1cb;
-
-  /* Warm Earth */
-  --basalt-brown: #3d2b1f;
-  --harvest-amber: #ef9f27;
-  --dust-cream: #f1efe8;
+  /* Living Earth palette */
+  --white: #ffffff;
+  --cream: #f7f4ee;
+  --sage-light: #e8f2e9;
+  --green-mid: #2d7a4f;
+  --green-primary: #1d9e75;
+  --green-bright: #5dcaa5;
+  --blue-sky: #e8f4fd;
+  --blue-mid: #2b6cb0;
+  --blue-accent: #4a9fd4;
+  --soil-brown: #6b4c2a;
+  --amber: #ef9f27;
+  --dark-green: #0a2e1a;
 
   /* Text */
-  --text-primary: #f1efe8;
-  --text-secondary: #9fe1cb;
-  --text-muted: #5f8a70;
+  --text-dark: #1a2e1a;
+  --text-mid: #3d6b4f;
+  --text-muted: #5c7a68;
+  --text-on-dark: #f2f7f3;
+  --text-on-dark-mid: #a9d6bd;
 
-  /* Functional */
-  --border-subtle: rgba(93, 202, 165, 0.15);
-  --glow-green: 0 0 40px rgba(29, 158, 117, 0.3);
+  --border-subtle: rgba(45, 122, 79, 0.14);
+  --border-subtle-dark: rgba(93, 202, 165, 0.18);
+  --glow-green: 0 0 40px rgba(29, 158, 117, 0.25);
 
-  --background: var(--soil-black);
-  --foreground: var(--text-primary);
+  --background: var(--cream);
+  --foreground: var(--text-dark);
 }
 
 @theme inline {
-  --color-soil-black: var(--soil-black);
-  --color-earth-dark: var(--earth-dark);
-  --color-earth-mid: var(--earth-mid);
+  --color-white: var(--white);
+  --color-cream: var(--cream);
+  --color-sage-light: var(--sage-light);
+  --color-green-mid: var(--green-mid);
+  --color-green-primary: var(--green-primary);
+  --color-green-bright: var(--green-bright);
+  --color-blue-sky: var(--blue-sky);
+  --color-blue-mid: var(--blue-mid);
+  --color-blue-accent: var(--blue-accent);
+  --color-soil-brown: var(--soil-brown);
+  --color-amber: var(--amber);
+  --color-dark-green: var(--dark-green);
 
-  --color-growth-green: var(--growth-green);
-  --color-carbon-teal: var(--carbon-teal);
-  --color-leaf-light: var(--leaf-light);
-
-  --color-basalt-brown: var(--basalt-brown);
-  --color-harvest-amber: var(--harvest-amber);
-  --color-dust-cream: var(--dust-cream);
-
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
+  --color-text-dark: var(--text-dark);
+  --color-text-mid: var(--text-mid);
   --color-text-muted: var(--text-muted);
+  --color-text-on-dark: var(--text-on-dark);
+  --color-text-on-dark-mid: var(--text-on-dark-mid);
 
   --color-border-subtle: var(--border-subtle);
+  --color-border-subtle-dark: var(--border-subtle-dark);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-display: var(--font-space-grotesk);
-  --font-sans: var(--font-inter);
+  --font-display: "Clash Display", "Satoshi", system-ui, sans-serif;
+  --font-sans: "Satoshi", system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono);
+
+  --text-display: clamp(4rem, 9vw, 7.5rem);
+  --text-h1: clamp(3rem, 6vw, 5rem);
+  --text-h2: clamp(2.25rem, 4vw, 3.5rem);
+  --text-h3: clamp(1.5rem, 3vw, 2.25rem);
 
   --animate-fade-up: fade-up 0.7s ease-out forwards;
   --animate-pulse-glow: pulse-glow 2.4s ease-in-out infinite;
   --animate-marquee: marquee 30s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
 
   @keyframes fade-up {
     from {
@@ -88,6 +101,15 @@
       transform: translateX(-50%);
     }
   }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
 }
 
 * {
@@ -98,9 +120,14 @@ html {
   scroll-behavior: smooth;
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
 body {
-  background: var(--soil-black);
-  color: var(--text-primary);
+  background: var(--cream);
+  color: var(--text-dark);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -119,18 +146,31 @@ h4,
 }
 
 ::selection {
-  background: var(--growth-green);
-  color: var(--soil-black);
+  background: var(--green-primary);
+  color: var(--white);
 }
 
 .glass-card {
   backdrop-filter: blur(20px);
-  background: rgba(29, 158, 117, 0.08);
+  background: rgba(255, 255, 255, 0.6);
   border: 1px solid var(--border-subtle);
 }
 
+.glass-card-dark {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle-dark);
+}
+
 .text-gradient {
-  background: linear-gradient(120deg, var(--dust-cream), var(--leaf-light));
+  background: linear-gradient(120deg, var(--green-mid), var(--green-primary) 55%, var(--green-bright));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-light {
+  background: linear-gradient(120deg, var(--white), var(--green-bright));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -145,25 +185,39 @@ h4,
   transform: translateY(-2px);
 }
 
+.grain-texture {
+  position: relative;
+}
+
+.grain-texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
 /* scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--soil-black);
+  background: var(--cream);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--earth-mid);
+  background: var(--green-mid);
   border-radius: 8px;
-  border: 2px solid var(--soil-black);
+  border: 2px solid var(--cream);
 }
 
 .mapboxgl-popup-content {
-  background: var(--earth-dark) !important;
-  color: var(--text-primary) !important;
+  background: var(--white) !important;
+  color: var(--text-dark) !important;
   border-radius: 12px !important;
   border: 1px solid var(--border-subtle);
 }
 .mapboxgl-popup-tip {
-  border-top-color: var(--earth-dark) !important;
+  border-top-color: var(--white) !important;
 }

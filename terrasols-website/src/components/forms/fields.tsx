@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 const baseInputStyles =
-  "w-full rounded-lg border border-border-subtle bg-earth-mid px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:border-carbon-teal focus:outline-none focus:ring-1 focus:ring-carbon-teal transition-colors";
+  "w-full rounded-lg border border-border-subtle bg-sage-light px-4 py-3 text-sm text-text-dark placeholder:text-text-muted focus:border-green-bright focus:outline-none focus:ring-1 focus:ring-green-bright transition-colors";
 
 export function Field({
   label,
@@ -14,7 +14,7 @@ export function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1.5 block text-sm font-medium text-text-secondary">{label}</span>
+      <span className="mb-1.5 block text-sm font-medium text-text-mid">{label}</span>
       {children}
       {error && <span className="mt-1 block text-xs text-red-400">{error}</span>}
     </label>
@@ -50,7 +50,7 @@ export function Select(props: React.SelectHTMLAttributes<HTMLSelectElement> & { 
 export function FormStatus({ status }: { status: "idle" | "success" | "error" }) {
   if (status === "success") {
     return (
-      <p className="rounded-lg border border-growth-green/30 bg-growth-green/10 px-4 py-3 text-sm text-carbon-teal">
+      <p className="rounded-lg border border-green-primary/30 bg-green-primary/10 px-4 py-3 text-sm text-green-mid">
         Thank you — we&apos;ve received your submission and will be in touch soon.
       </p>
     );

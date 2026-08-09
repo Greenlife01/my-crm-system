@@ -52,16 +52,16 @@ export default function BuyersPage() {
         description="India's most rigorously verified Enhanced Rock Weathering supply — built for compliance and voluntary markets alike."
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">
             Why ERW Credits?
           </h2>
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {reasons.map((r) => (
               <Card key={r.title}>
-                <r.icon className="h-6 w-6 text-carbon-teal" />
-                <p className="mt-4 font-display font-semibold text-text-primary">{r.title}</p>
+                <r.icon className="h-6 w-6 text-green-mid" />
+                <p className="mt-4 font-display font-semibold text-text-dark">{r.title}</p>
                 <p className="mt-2 text-sm text-text-muted">{r.body}</p>
               </Card>
             ))}
@@ -69,19 +69,19 @@ export default function BuyersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
+      <SectionWrapper className="bg-white py-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">
             Our Supply Pipeline
           </h2>
           <div className="mt-14 flex flex-wrap items-end justify-center gap-4 sm:gap-6">
             {ladder.map((step, i) => (
               <div key={step.volume} className="flex flex-col items-center gap-2">
                 <div
-                  className="flex w-16 items-end justify-center rounded-t-lg bg-gradient-to-t from-growth-green to-carbon-teal sm:w-20"
+                  className="flex w-16 items-end justify-center rounded-t-lg bg-gradient-to-t from-green-primary to-green-bright sm:w-20"
                   style={{ height: `${60 + i * 30}px` }}
                 />
-                <p className="font-data text-sm font-semibold text-text-primary">{step.volume}</p>
+                <p className="font-data text-sm font-semibold text-text-dark">{step.volume}</p>
                 <p className="text-xs text-text-muted">{step.label}</p>
               </div>
             ))}
@@ -89,12 +89,12 @@ export default function BuyersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <Badge tone="green" className="mb-5">
             Verification
           </Badge>
-          <h2 className="font-display text-3xl font-medium text-text-primary">Isometric EW v1.2</h2>
+          <h2 className="font-display text-3xl font-medium text-text-dark">Isometric EW v1.2</h2>
           <p className="mt-4 text-text-muted">
             Every tonne is registered and verified under the Isometric Enhanced Weathering Protocol
             v1.2 — requiring primary data collection, conservative uncertainty deductions, and
@@ -104,9 +104,9 @@ export default function BuyersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
+      <SectionWrapper className="bg-white py-24">
         <div className="mx-auto max-w-2xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">
             Request an Offtake Discussion
           </h2>
           <div className="mt-10">

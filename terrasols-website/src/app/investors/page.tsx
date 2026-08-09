@@ -27,24 +27,24 @@ export default function InvestorsPage() {
         title="Backing India&apos;s Enhanced Rock Weathering Infrastructure"
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-medium text-text-primary">Traction</h2>
+          <h2 className="font-display text-3xl font-medium text-text-dark">Traction</h2>
           <ul className="mt-8 space-y-4">
             {traction.map((t) => (
               <li key={t} className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-growth-green" />
-                <span className="text-text-secondary">{t}</span>
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-primary" />
+                <span className="text-text-mid">{t}</span>
               </li>
             ))}
           </ul>
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
+      <SectionWrapper className="bg-white py-24">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-medium text-text-primary">Why Now?</h2>
-          <p className="mt-5 text-text-secondary leading-relaxed">
+          <h2 className="font-display text-3xl font-medium text-text-dark">Why Now?</h2>
+          <p className="mt-5 text-text-mid leading-relaxed">
             India&apos;s carbon market infrastructure is maturing quickly — the Carbon Credit Trading
             Scheme (CCTS) is rolling out domestically, while the EU&apos;s CBAM is reshaping export
             economics for
@@ -55,9 +55,9 @@ export default function InvestorsPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-2xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">
             Request Investor Deck
           </h2>
           <div className="mt-10">

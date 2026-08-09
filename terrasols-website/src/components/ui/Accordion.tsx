@@ -8,16 +8,16 @@ export default function Accordion({ items }: { items: { question: string; answer
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-border-subtle rounded-2xl border border-border-subtle bg-earth-dark">
+    <div className="divide-y divide-border-subtle rounded-2xl border border-border-subtle bg-white">
       {items.map((item, i) => (
         <div key={item.question}>
           <button
             onClick={() => setOpen(open === i ? null : i)}
             className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
           >
-            <span className="font-medium text-text-primary">{item.question}</span>
+            <span className="font-medium text-text-dark">{item.question}</span>
             <ChevronDown
-              className={`h-5 w-5 shrink-0 text-carbon-teal transition-transform ${
+              className={`h-5 w-5 shrink-0 text-green-primary transition-transform ${
                 open === i ? "rotate-180" : ""
               }`}
             />

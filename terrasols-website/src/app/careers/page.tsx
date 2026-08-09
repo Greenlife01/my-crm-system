@@ -27,17 +27,17 @@ export default function CareersPage() {
         description="We're hiring across field operations, science, MRV, partnerships, and software."
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">Open Roles</h2>
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">Open Roles</h2>
           <div className="mt-14 space-y-4">
             {openRoles.map((role) => (
               <div
                 key={role.title}
-                className="flex flex-col items-start justify-between gap-4 rounded-2xl border border-border-subtle bg-earth-dark p-6 sm:flex-row sm:items-center"
+                className="flex flex-col items-start justify-between gap-4 rounded-2xl border border-border-subtle bg-white p-6 sm:flex-row sm:items-center"
               >
                 <div>
-                  <p className="font-display font-semibold text-text-primary">{role.title}</p>
+                  <p className="font-display font-semibold text-text-dark">{role.title}</p>
                   <p className="mt-1 flex items-center gap-1.5 text-sm text-text-muted">
                     <MapPin className="h-3.5 w-3.5" /> {role.location}
                   </p>
@@ -51,16 +51,16 @@ export default function CareersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
+      <SectionWrapper className="bg-white py-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">
             Why Terrasols?
           </h2>
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
             {whyUs.map((w) => (
               <Card key={w.title}>
-                <w.icon className="h-6 w-6 text-carbon-teal" />
-                <p className="mt-4 font-display font-semibold text-text-primary">{w.title}</p>
+                <w.icon className="h-6 w-6 text-green-mid" />
+                <p className="mt-4 font-display font-semibold text-text-dark">{w.title}</p>
                 <p className="mt-2 text-sm text-text-muted">{w.body}</p>
               </Card>
             ))}
@@ -68,7 +68,7 @@ export default function CareersPage() {
           <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-text-muted">
             Remote + field hybrid. For institutional partnership enquiries — incubators, universities,
             research institutions, and government agencies — write to us at{" "}
-            <a href={`mailto:${company.emailInfo}`} className="text-carbon-teal">
+            <a href={`mailto:${company.emailInfo}`} className="text-green-mid">
               {company.emailInfo}
             </a>
             .
@@ -76,9 +76,9 @@ export default function CareersPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper id="apply" className="bg-soil-black py-24">
+      <SectionWrapper id="apply" className="bg-cream py-24">
         <div className="mx-auto max-w-2xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">Apply</h2>
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">Apply</h2>
           <div className="mt-10">
             <CareerApplicationForm />
           </div>

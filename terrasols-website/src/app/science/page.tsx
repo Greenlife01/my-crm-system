@@ -55,27 +55,27 @@ export default function SciencePage() {
         description="Enhanced Rock Weathering, explained — from chemistry to verification."
       />
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">
             The ERW Mechanism
           </h2>
           <div className="mt-14 space-y-6">
             {mechanismSteps.map((step, i) => (
               <SectionWrapper key={step.formula} delay={i * 0.12}>
-                <div className="flex flex-col items-center gap-4 rounded-2xl border border-border-subtle bg-earth-dark p-6 text-center sm:flex-row sm:text-left">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-growth-green/15 font-data font-bold text-growth-green">
+                <div className="flex flex-col items-center gap-4 rounded-2xl border border-border-subtle bg-white p-6 text-center sm:flex-row sm:text-left">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-green-primary/15 font-data font-bold text-green-primary">
                     {i + 1}
                   </div>
                   <div>
-                    <p className="font-data text-sm text-carbon-teal sm:text-base">
+                    <p className="font-data text-sm text-green-mid sm:text-base">
                       {step.formula} <span className="text-text-muted">→</span> {step.result}
                     </p>
                     <p className="mt-1 text-sm text-text-muted">{step.description}</p>
                   </div>
                 </div>
                 {i < mechanismSteps.length - 1 && (
-                  <div className="mx-auto h-8 w-px bg-gradient-to-b from-growth-green/50 to-transparent" />
+                  <div className="mx-auto h-8 w-px bg-gradient-to-b from-green-primary/50 to-transparent" />
                 )}
               </SectionWrapper>
             ))}
@@ -83,17 +83,17 @@ export default function SciencePage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-earth-dark py-24">
+      <SectionWrapper className="bg-white py-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-harvest-amber">
+              <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-amber">
                 <Mountain className="h-4 w-4" /> Geology
               </span>
-              <h2 className="mt-3 font-display text-3xl font-medium text-text-primary">
+              <h2 className="mt-3 font-display text-3xl font-medium text-text-dark">
                 Why Deccan Traps Basalt?
               </h2>
-              <p className="mt-4 text-text-secondary">
+              <p className="mt-4 text-text-mid">
                 The Deccan Traps is one of the largest volcanic provinces on Earth, spanning much of
                 central and western India. Its basalt is rich in calcium and magnesium silicates, with
                 high weathering reactivity — and it sits directly beside vast tracts of agricultural
@@ -106,16 +106,16 @@ export default function SciencePage() {
                 <li>• Proximity to smallholder farmland in Madhya Pradesh</li>
               </ul>
             </div>
-            <div className="flex aspect-square items-center justify-center rounded-2xl border border-border-subtle bg-earth-mid text-sm text-text-muted">
+            <div className="flex aspect-square items-center justify-center rounded-2xl border border-border-subtle bg-sage-light text-sm text-text-muted">
               Map: Deccan Traps geological formation
             </div>
           </div>
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-soil-black py-24">
+      <SectionWrapper className="bg-cream py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-medium text-text-primary">
+          <h2 className="text-center font-display text-3xl font-medium text-text-dark">
             MRV Methodology
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-text-muted">
@@ -125,8 +125,8 @@ export default function SciencePage() {
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
             {mrvPoints.map((p) => (
               <Card key={p.title}>
-                <p.icon className="h-6 w-6 text-carbon-teal" />
-                <p className="mt-4 font-display font-semibold text-text-primary">{p.title}</p>
+                <p.icon className="h-6 w-6 text-green-mid" />
+                <p className="mt-4 font-display font-semibold text-text-dark">{p.title}</p>
                 <p className="mt-2 text-sm text-text-muted">{p.body}</p>
               </Card>
             ))}
@@ -134,14 +134,14 @@ export default function SciencePage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-harvest-amber/5 py-20">
-        <div className="mx-auto max-w-3xl rounded-2xl border border-harvest-amber/30 bg-earth-dark px-6 py-10 text-center lg:px-8">
-          <Award className="mx-auto h-8 w-8 text-harvest-amber" />
-          <p className="mt-4 font-display text-xl font-semibold text-text-primary">
+      <SectionWrapper className="bg-amber/5 py-20">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-amber/30 bg-white px-6 py-10 text-center lg:px-8">
+          <Award className="mx-auto h-8 w-8 text-amber" />
+          <p className="mt-4 font-display text-xl font-semibold text-text-dark">
             Joint Patent in Progress
           </p>
-          <p className="mt-3 text-text-secondary">
-            With <strong className="text-harvest-amber">ICAR-IARI Pusa</strong> on basalt rock fines
+          <p className="mt-3 text-text-mid">
+            With <strong className="text-amber">ICAR-IARI Pusa</strong> on basalt rock fines
             valorisation for agricultural carbon removal.
           </p>
           <p className="mt-4 text-sm text-text-muted">

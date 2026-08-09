@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "dark";
 
 interface ButtonProps {
   href?: string;
@@ -19,12 +19,13 @@ interface ButtonProps {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-growth-green text-soil-black hover:bg-leaf-light hover:shadow-[0_0_40px_rgba(29,158,117,0.4)]",
+    "bg-green-primary text-white hover:bg-green-mid hover:shadow-[0_10px_30px_rgba(29,158,117,0.35)]",
   secondary:
-    "bg-harvest-amber text-soil-black hover:brightness-110 hover:shadow-[0_0_40px_rgba(239,159,39,0.35)]",
+    "bg-amber text-dark-green hover:brightness-105 hover:shadow-[0_10px_30px_rgba(239,159,39,0.3)]",
   outline:
-    "border border-border-subtle text-text-primary hover:border-carbon-teal hover:text-carbon-teal",
-  ghost: "text-text-primary hover:text-carbon-teal",
+    "border border-border-subtle bg-white/60 text-text-dark hover:border-green-primary hover:text-green-mid",
+  ghost: "text-text-dark hover:text-green-mid",
+  dark: "bg-white text-dark-green hover:bg-green-bright hover:text-dark-green",
 };
 
 export default function Button({
@@ -40,7 +41,7 @@ export default function Button({
   disabled,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-medium transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none",
+    "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none",
     variantStyles[variant],
     className
   );
